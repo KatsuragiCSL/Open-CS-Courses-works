@@ -5,13 +5,13 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | Course      | Learning point | Status     |
 | :---        | :----          | :---       |
 | [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, implementing an interpreter of Scheme Language      | In progress   |
-| [CS 106L Standard C++ Programming](http://web.stanford.edu/class/cs106l/)   |  C++       | Not started      |
+| [CS 61B Data Structures](https://sp21.datastructur.es/)      | Java, algorithms | Not started     |
 | [CS 110L: Safety in Systems Programming](https://reberhardt.com/cs110l/spring-2020/)        | Rust          | Not started       |
 | [CS3310 OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/cover.html)        | OCaml          | Not started       |
+| [CS170: Efficient Algorithms and Intractable Problems](https://cs170.org/)	| Advanced Algorithms and analysis	| Not started	|
 | [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Spring21/)        | numerical analysis          | Not started       |
 | [MIT6.050J: Information theory and Entropy](https://ocw.mit.edu/courses/6-050j-information-and-entropy-spring-2008/)        | information theory          | Not started       |
 | [EE120 Signals and Systems](https://inst.eecs.berkeley.edu/~ee120/fa19/)      | Learning point | Not started     |
-| [CS 61B Data Structures](https://sp21.datastructur.es/)      | Java, algorithms | Not started     |
 | [Nand2Tetris](https://www.coursera.org/learn/build-a-computer)      | Building things from Nand Gates | Not started     |
 | [CS 61C: Great Ideas in Computer Architecture](https://inst.eecs.berkeley.edu/~cs61c/su20/)      | C, computer architeture | Not started     |
 | [CMU 15-213: Introduction to Computer System](http://csapp.cs.cmu.edu/)      | computer architeture | Not started     |
