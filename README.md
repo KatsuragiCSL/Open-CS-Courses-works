@@ -21,7 +21,17 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [MIT 6.858: Computer System Security](http://css.csail.mit.edu/6.858/2022/)      | Security | Not started     |
 | [CS 144: Introduction to Computer Networking](https://cs144.github.io/)      | Networking, building TCP/IP from scratch, building your own protocols | Not started     |
 | [CMU 15-445: Introduction to Database System](https://15445.courses.cs.cmu.edu/fall2020/)      | Database | Not started     |
-| [CS143: Compilers](http://web.stanford.edu/class/cs143/)      | Compilers | Not started     |
+| [CS143: Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/watch?v=SNWHmnWzJAI&list=PLoCMsyE1cvdUZRe1udlyjpzTww1U5olL2&index=2)      | Compilers | Not started     |
 | [MIT 6.820 FUNDAMENTALS OF PROGRAM ANALYSIS](https://ocw.mit.edu/courses/6-820-fundamentals-of-program-analysis-fall-2015/)      | program analysis | Not started     |
 | [CIS 700: Software Analysis and Testing](https://www.cis.upenn.edu/~mhnaik/edu/cis700/index.html#reading)      | program analysis | Not started     |
+| [Principles and Techniques of Data Science](https://ds100.org/fa21/)	| data science | Not started	|
 | [CS50’s Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai/2020/)      | AI | Not started     |
+| [CS5785 Applied Machine Learning](https://cornelltech.github.io/cs5785-fall-2019/index.html)	| Learning point	| Not started	|
+| [CS 6120: Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2022sp/)	| Learning point	| Not started	|
+| [CS 6431 Security and Privacy Technologies](https://www.cs.utexas.edu/~shmat/courses/cs6431/)	| Learning point	| Not started	|
+| [MIT 6.875 Graduate Cryptography](https://inst.eecs.berkeley.edu/~cs276/fa20/), [Lectures](https://www.youtube.com/watch?v=jDsfV2ohFPs&list=PL6ogFv-ieghe8MOIcpD6UDtdK-UMHG8oH)	| Learning point	| Not started	|
+| [CMU 15-390: Entrepreneurship for Computer Science](https://web2.qatar.cmu.edu/~mhhammou/15390-s20/index.html)	| Learning point	| Not started	|
+| [CMU 17-241: Principles of Software Construction](https://www.cs.cmu.edu/~charlie/courses/17-214/2021-spring/index.html)	| Software engineering	| Not started	|
+| [CMU 15-217: Logic and Mechanized Reasoning](http://www.cs.cmu.edu/~mheule/15217-f21/index.html)	| Symbolic logic	| Not started	|
+| [CMU 15-414: Bug Catching: Automated Program Verification](https://www.cs.cmu.edu/~15414/s22/index.html)	| Learning point	| Not started	|
+| [CMU 15-455: Undergraduate Complexity Theory](https://www.cs.cmu.edu/~15455/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3YL5vLXpzOyJiLtqLp6dCW2)	| Learning point	| Not started	|
