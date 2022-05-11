@@ -3,4 +3,4 @@
 ### Selected assignments
 - Hog (Basic python programming)
 - Cats (Basic modular design thinking, recursive functions)
-- Scheme (Implementing an interpreter, concepts of programming languages)
+- Scheme (Implementing an interpreter, concepts of programming languages, Scheme programming)
