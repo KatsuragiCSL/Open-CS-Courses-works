@@ -38,6 +38,8 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         "*** YOUR CODE HERE ***"
         op = scheme_eval(first, env)
         validate_procedure(op)
+        if isinstance(op, MacroProcedure):
+            return scheme_eval(op.apply_macro(rest, env), env)
         operands = rest.map(lambda x : scheme_eval(x, env))
         return scheme_apply(op, operands, env)
         # END PROBLEM 4
@@ -462,6 +464,16 @@ def do_define_macro(expressions, env):
     """
     # BEGIN Problem 20
     "*** YOUR CODE HERE ***"
+    validate_form(expressions, 2)
+    target = expressions.first
+    if isinstance(target, Pair):
+        if scheme_symbolp(target.first):
+            formals = target.rest
+            body = expressions.rest
+            macro_procedure = MacroProcedure(formals, body, env)
+            env.define(target.first, macro_procedure)
+            return target.first
+    raise SchemeError("improper macro definition")
     # END Problem 20
 
 
