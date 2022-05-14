@@ -4,8 +4,8 @@ This is a place to share my works on open CS courses. This is aimed to record my
 **Course list**
 | Course      | Learning point | Status     |
 | :---        | :----          | :---       |
-| [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, implementing an interpreter of Scheme Language      | In progress   |
-| [CS 61B Data Structures](https://sp21.datastructur.es/)      | Java, algorithms | Not started     |
+| [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, implementing an interpreter of Scheme Language      | Done   |
+| [CS 61B Data Structures](https://sp21.datastructur.es/)      | Java, algorithms | In progress     |
 | [CS 110L: Safety in Systems Programming](https://reberhardt.com/cs110l/spring-2020/)        | Rust          | Not started       |
 | [CS3310 OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/cover.html)        | OCaml          | Not started       |
 | [CS170: Efficient Algorithms and Intractable Problems](https://cs170.org/)	| Advanced Algorithms and analysis	| Not started	|
