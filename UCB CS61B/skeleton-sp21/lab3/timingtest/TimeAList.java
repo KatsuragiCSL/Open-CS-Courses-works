@@ -27,7 +27,7 @@ public class TimeAList {
         AList<Double> times = new AList<Double>();
         AList<Integer> opCounts = new AList<Integer>();
 
-        for (int i : new int[]{1000, 2000, 4000, 8000, 16000, 32000, 64000}) {
+        for (int i : new int[]{1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000}) {
             Ns.addLast(i);
             opCounts.addLast(i);
 
