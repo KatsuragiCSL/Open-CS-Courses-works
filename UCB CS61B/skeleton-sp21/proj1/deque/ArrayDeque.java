@@ -1,6 +1,6 @@
 package deque;
 
-public class ArrayDeque<T> {
+public class ArrayDeque<T> implements Deque<T> {
     private T[] array;
     private int size;
     private int length;
@@ -127,9 +127,9 @@ public class ArrayDeque<T> {
         return array[index];
     }
 
-    public boolean isEmpty() {
+    /*public boolean isEmpty() {
         return (size == 0);
-    }
+    }*/
 
     public int size() {
         return size;

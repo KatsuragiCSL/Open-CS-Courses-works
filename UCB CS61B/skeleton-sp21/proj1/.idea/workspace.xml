@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e133858-011c-44c4-9c59-e8de3184ce97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deque/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/deque/LinkedListDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deque/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/deque/ArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deque/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/deque/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gh2/GuitarString.java" beforeDir="false" afterPath="$PROJECT_DIR$/gh2/GuitarString.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +54,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ArrayDequeTest">
+  <component name="RunManager" selected="JUnit.TestGuitarString">
     <configuration name="ArrayDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1" />
       <extension name="coverage">
@@ -83,38 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayDequeTest.emptyNullReturnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="deque.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="deque" />
-      <option name="MAIN_CLASS_NAME" value="deque.ArrayDequeTest" />
-      <option name="METHOD_NAME" value="emptyNullReturnTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayDequeTest.multipleParamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="deque.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="deque" />
-      <option name="MAIN_CLASS_NAME" value="deque.ArrayDequeTest" />
-      <option name="METHOD_NAME" value="multipleParamTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LinkedListDequeTest.bigLLDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1" />
       <extension name="coverage">
@@ -131,13 +102,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestGuitarString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gh2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gh2" />
+      <option name="MAIN_CLASS_NAME" value="gh2.TestGuitarString" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGuitarString.testSample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gh2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gh2" />
+      <option name="MAIN_CLASS_NAME" value="gh2.TestGuitarString" />
+      <option name="METHOD_NAME" value="testSample" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestGuitarString" />
+        <item itemvalue="JUnit.TestGuitarString.testSample" />
         <item itemvalue="JUnit.ArrayDequeTest" />
         <item itemvalue="JUnit.ArrayDequeTest.bigLLDequeTest" />
         <item itemvalue="JUnit.LinkedListDequeTest.bigLLDequeTest" />
-        <item itemvalue="JUnit.ArrayDequeTest.emptyNullReturnTest" />
-        <item itemvalue="JUnit.ArrayDequeTest.multipleParamTest" />
       </list>
     </recent_temporary>
   </component>
