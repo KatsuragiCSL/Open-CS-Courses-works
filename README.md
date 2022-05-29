@@ -6,10 +6,10 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | :---        | :----          | :---       |
 | [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, implementing an interpreter of Scheme Language      | Done   |
 | [CS 61B Data Structures](https://sp21.datastructur.es/)      | Java, data structures | In progress     |
-| [CS 61C: Great Ideas in Computer Architecture](https://inst.eecs.berkeley.edu/~cs61c/su20/)      | C, computer architeture | Not started     |
+| [CS 61C: Great Ideas in Computer Architecture](https://inst.eecs.berkeley.edu/~cs61c/su20/)      | computer architeture | In progress     |
 | [6.S081: Operating System Engineering ](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | Not started     |
 | [CS 161: Computer Security](https://su20.cs161.org/)      | Security | Not started     |
-| [CS143: Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/watch?v=SNWHmnWzJAI&list=PLoCMsyE1cvdUZRe1udlyjpzTww1U5olL2&index=2)      | Compilers | Not started     |
+| [CS143: Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | Not started     |
 | [CS 144: Introduction to Computer Networking](https://cs144.github.io/)      | Networking, building TCP/IP from scratch, building your own protocols | Not started     |
 | [DS 100: Principles and Techniques of Data Science](https://ds100.org/fa21/)	| data science | Not started	|
 | [CS50’s Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai/2020/)      | AI | Not started     |
@@ -19,7 +19,6 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Spring21/)        | numerical analysis          | Not started       |
 | [MIT6.050J: Information theory and Entropy](https://ocw.mit.edu/courses/6-050j-information-and-entropy-spring-2008/)        | information theory          | Not started       |
 | [EE120 Signals and Systems](https://inst.eecs.berkeley.edu/~ee120/fa19/)      | Learning point | Not started     |
-| [Nand2Tetris](https://www.coursera.org/learn/build-a-computer)      | Building things from Nand Gates | Not started     |
 | [CMU 15-213: Introduction to Computer System](http://csapp.cs.cmu.edu/)      | computer architeture | Not started     |
 | [MIT6.824: Distributed System](https://pdos.csail.mit.edu/6.824/schedule.html)      | Distributed systems | Not started     |
 | [MIT 6.858: Computer System Security](http://css.csail.mit.edu/6.858/2022/)      | Security | Not started     |
