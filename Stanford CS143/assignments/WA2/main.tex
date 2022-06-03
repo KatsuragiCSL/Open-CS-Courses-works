@@ -362,6 +362,37 @@ Draw an NFA for $L$.  Your solution should have no more than 15 states.
 
 \textbf{Solution}:
 % Answer Here
+\begin{tikzpicture}[auto]
+    \node[state, initial] (q_0) {};
+    \node[state] (q_a1) [above right=3cm and 3cm of q_0] {};
+    \node[state] (q_b1) [right=3.2cm of q_0] {};
+    \node[state] (q_c1) [below right=3cm and 3cm of q_0] {};
+    \node[state] (q_a2) [right of=q_a1] {};
+    \node[state] (q_b2) [right of=q_b1] {};
+    \node[state] (q_c2) [right of=q_c1] {};
+    \node[state, accepting] (q_a3) [right of=q_a2] {};
+    \node[state, accepting] (q_b3) [right of=q_b2] {};
+    \node[state, accepting] (q_c3) [right of=q_c2] {};
+    \path[->]
+        (q_0) edge node {$\epsilon$} (q_a1)
+        (q_0) edge node {$\epsilon$} (q_b1)
+        (q_0) edge node {$\epsilon$} (q_c1)
+        (q_a1) edge[loop above] node {$b,c$} (q_a1)
+        (q_a1) edge node {$a$} (q_a2)
+        (q_a1) edge[bend right=30] node[below] {$a$} (q_a3)
+        (q_a2) edge[loop above] node {$b,c$} (q_a2)
+        (q_a2) edge node {$a$} (q_a3)
+        (q_b1) edge[loop above] node {$a,c$} (q_b1)
+        (q_b1) edge node {$b$} (q_b2)
+        (q_b1) edge[bend right=30] node[below] {$b$} (q_b3)
+        (q_b2) edge[loop above] node {$a,c$} (q_b2)
+        (q_b2) edge node {$b$} (q_b3)
+        (q_c1) edge[loop above] node {$a,b$} (q_c1)
+        (q_c1) edge node {$c$} (q_c2)
+        (q_c1) edge[bend right=30] node[below] {$c$} (q_c3)
+        (q_c2) edge[loop above] node {$a,b$} (q_c2)
+        (q_c2) edge node {$c$} (q_c3);
+\end{tikzpicture}
 
 \newpage
 
@@ -380,6 +411,7 @@ Give an input to this scanner such that the output string is $(\mathtt{apple})^3
 \textbf{Solution}:
 \[
     % Answer Here
+    (011)^3((01010)^201001)^2
 \]
 
 
@@ -401,6 +433,23 @@ However, it is possible to have a set of regular expressions for which we can to
 As a challenge (not necessary for credit), try to find a solution that only uses one regular expression.
 
 \textbf{Solution}: % Answer Here
+\begin{quote}
+\begin{lstlisting}
+%%
+xx                      { return T_xx; }
+xxx                     { return T_xxx; }
+\end{lstlisting}
+\end{quote}
 
+Input "xxxx" can be broken into 2 "xx", but our matching rule will catch "xxx" as it is the longest match.
+
+Solution:
+\begin{quote}
+\begin{lstlisting}
+%%
+==/==                      { return T_xx; }
+\end{lstlisting}
+\end{quote}
+This matches 2 "xx" by lookahead.
 \end{enumerate}
 \end{document}
