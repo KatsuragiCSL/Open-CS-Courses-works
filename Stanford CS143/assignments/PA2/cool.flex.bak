@@ -55,14 +55,41 @@ extern YYSTYPE cool_yylval;
 
 DARROW          =>
 DIGIT           [0-9]
-TYPE            [A-Z][A-Za-z0-9_]*
-OBJ             [a-z][A-Za-z0-9_]*
-WHITESPACES     [ \f\r\t\v]+
 %Start          COMMENTS
 %Start          INLINE_COMMENTS
 %Start          STRING
 
 /* ----- Definitions end. */
+
+/*
+#define CLASS 258
+#define ELSE 259
+#define FI 260
+#define IF 261
+#define IN 262
+#define INHERITS 263
+#define LET 264
+#define LOOP 265
+#define POOL 266
+#define THEN 267
+#define WHILE 268
+#define CASE 269
+#define ESAC 270
+#define OF 271
+#define DARROW 272
+#define NEW 273
+#define ISVOID 274
+#define STR_CONST 275
+#define INT_CONST 276
+#define BOOL_CONST 277
+#define TYPEID 278
+#define OBJECTID 279
+#define ASSIGN 280
+#define NOT 281
+#define LE 282
+#define ERROR 283
+#define LET_STMT 285
+*/
 
  /* ----- Rules begin: */
 %%
@@ -101,12 +128,13 @@ WHITESPACES     [ \f\r\t\v]+
   * ===============
   */
 
-<INITIAL>"--" {
-	BEGIN INLINE_COMMENTS;
-}
+ /* if seen "--", start inline comment */
+<INITIAL>"--" { BEGIN INLINE_COMMENTS; }
 
+ /* any character other than '\n' is a nop in inline comments */
 <INLINE_COMMENTS>[^\n]* { }
 
+ /* if seen '\n' in inline comment, the comment ends */
 <INLINE_COMMENTS>\n {
     curr_lineno++;
     BEGIN 0;
@@ -120,54 +148,60 @@ WHITESPACES     [ \f\r\t\v]+
   * \n \t \b \f, the result is c.
   */
 
-<INITIAL>\" {
-	BEGIN STRING;
-	yymore();
+ /* if seen '\"', start string */
+<INITIAL>(\") {
+    BEGIN STRING;
+    yymore();
 }
 
- /* eat up valid chars */
-<STRING>[^\\\"\n]* {
-	yymore();
-}
+ /* Cannot read '\\' '\"' '\n' */
+<STRING>[^\\\"\n]* { yymore(); }
 
- /* normal escape char */
-<STRING>\\[^\n] {
-	yymore();
-}
+ /* normal escape characters, not \n */
+<STRING>\\[^\n] { yymore(); }
 
- /* escaped newline */
+ /* seen a '\\' at the end of a line, the string continues */
 <STRING>\\\n {
     curr_lineno++;
     yymore();
 }
 
+ /* meet EOF in the middle of a string, error */
 <STRING><<EOF>> {
-    yylval.error_msg = "unexpected EOF";
+    yylval.error_msg = "EOF in string constant";
     BEGIN 0;
     yyrestart(yyin);
     return ERROR;
 }
 
- /* Unescaped newline in string */
+ /* meet a '\n' in the middle of a string without a '\\', error */
 <STRING>\n {
-    yylval.error_msg = "Unescaped newlines";
+    yylval.error_msg = "Unterminated string constant";
     BEGIN 0;
     curr_lineno++;
     return ERROR;
 }
 
-<STRING>\" {
-	  /* construct input and output string */
-    std::string input(yytext, yyleng);
-		std::string output = "";
-		/* trace position in input */
-    std::string::size_type pos;
+ /* meet a "\\0" ??? */
+<STRING>\\0 {
+    yylval.error_msg = "Unterminated string constant";
+    BEGIN 0;
+    //curr_lineno++;
+    return ERROR;
+}
 
-    // remove the '\"'s on two ends.
+ /* string ends, we need to deal with some escape characters */
+<STRING>\" {
+    std::string input(yytext, yyleng);
+
+    // remove the '\"'s on both sizes.
     input = input.substr(1, input.length() - 2);
 
-		if (input.find_first_of('\0') != std::string::npos) {
-        yylval.error_msg = "String contains null chars";
+    std::string output = "";
+    std::string::size_type pos;
+
+    if (input.find_first_of('\0') != std::string::npos) {
+        yylval.error_msg = "String contains null character";
         BEGIN 0;
         return ERROR;
     }
@@ -198,8 +232,8 @@ WHITESPACES     [ \f\r\t\v]+
 
     output += input;
 
-    if (output.length() >= MAX_STR_CONST) {
-        yylval.error_msg = "String is too long";
+    if (output.length() > 1024) {
+        yylval.error_msg = "String constant too long";
         BEGIN 0;
         return ERROR;
     }
@@ -215,40 +249,65 @@ WHITESPACES     [ \f\r\t\v]+
   * ========
   */
 
+ /* CLASS */
 (?i:class) { return CLASS; }
 
+ /* ELSE */
 (?i:else) { return ELSE; }
 
+ /* FI */
 (?i:fi) { return FI; }
 
+ /* IF */
 (?i:if) { return IF; }
 
+ /* IN*/
 (?i:in) { return IN; }
 
+ /* INHERITS */
 (?i:inherits) { return INHERITS; }
 
+ /* LET */
 (?i:let) { return LET; }
 
+ /* LOOP */
 (?i:loop) { return LOOP; }
 
+ /* POOL */
 (?i:pool) { return POOL; }
 
+ /* THEN */
 (?i:then) { return THEN; }
 
+ /* WHILE */
 (?i:while) { return WHILE; }
 
+ /* CASE */
 (?i:case) { return CASE; }
 
+ /* ESAC */
 (?i:esac) { return ESAC; }
 
+ /* OF */
 (?i:of) { return OF; }
 
+ /* NEW */
 (?i:new) { return NEW; }
 
+ /* ISVOID */
 (?i:isvoid) { return ISVOID; }
 
+ /* NOT */
 (?i:not) { return NOT; }
 
+
+ /* INT_CONST */
+{DIGIT}+ {
+    cool_yylval.symbol = inttable.add_string(yytext);
+    return INT_CONST;
+}
+
+ /* BOOL_CONST */
 t(?i:rue) {
     cool_yylval.boolean = 1;
     return BOOL_CONST;
@@ -259,16 +318,11 @@ f(?i:alse) {
     return BOOL_CONST;
 }
 
-{DIGIT}+ {
-    cool_yylval.symbol = inttable.add_string(yytext);
-    return INT_CONST;
-}
-
  /* White Space */
-{WHITESPACES} { }
+[ \f\r\t\v]+ { }
 
  /* TYPEID */
-{TYPE} {
+[A-Z][A-Za-z0-9_]* {
     cool_yylval.symbol = idtable.add_string(yytext);
     return TYPEID;
 }
@@ -279,7 +333,7 @@ f(?i:alse) {
 }
 
  /* OBJECTID */
-{OBJ} {
+[a-z][A-Za-z0-9_]* {
     cool_yylval.symbol = idtable.add_string(yytext);
     return OBJECTID;
 }
@@ -289,43 +343,46 @@ f(?i:alse) {
   * =========
   */
 
+ /* ASSIGN */
 "<-" { return ASSIGN; }
 
+ /* LE */
 "<=" { return LE; }
 
+ /* DARROW */
 "=>" { return DARROW; }
 
-"+" { return '+'; }
+"+" { return int('+'); }
 
-"-" { return '-'; }
+"-" { return int('-'); }
 
-"*" { return '*'; }
+"*" { return int('*'); }
 
-"/" { return '/'; }
+"/" { return int('/'); }
 
-"<" { return '<'; }
+"<" { return int('<'); }
 
-"=" { return '='; }
+"=" { return int('='); }
 
-"." { return '.'; }
+"." { return int('.'); }
 
-";" { return ';'; }
+";" { return int(';'); }
 
-"~" { return '~'; }
+"~" { return int('~'); }
 
-"{" { return '{'; }
+"{" { return int('{'); }
 
-"}" { return '}'; }
+"}" { return int('}'); }
 
-"(" { return '('; }
+"(" { return int('('); }
 
-")" { return ')'; }
+")" { return int(')'); }
 
-":" { return ':'; }
+":" { return int(':'); }
 
-"@" { return '@'; }
+"@" { return int('@'); }
 
-"," { return ','; }
+"," { return int(','); }
 
  /* =====
   * error
