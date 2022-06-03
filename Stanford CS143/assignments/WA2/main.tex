@@ -91,7 +91,7 @@ Notice that a short regular expression does not automatically imply a DFA with f
                 (q_3) edge             node {$1$} (q_5)
                 (q_4) edge[bend right] node[above] {$0$} (q_2)
                 (q_4) edge             node {$0$} (q_5)
-                (q_5) edge[loop right] node {$0,1$} (q_5)
+                (q_5) edge[loop right] node {$0,1$} (q_5);
         \end{tikzpicture}
 
     \item The set of all strings that represent the concatenation of one odd number, one even number, and another odd number expressed in binary. (E.g., $\underline{01}\,\underline{10}\,\underline{01}$, but not $0110$.)
@@ -115,7 +115,7 @@ Notice that a short regular expression does not automatically imply a DFA with f
                 (q_2) edge[loop above] node {$0$} (q_2)
                 (q_2) edge node {$1$} (q_3)
                 (q_3) edge[loop right] node {$1$} (q_3)
-                (q_3) edge[bend left] node[below] {$0$} (q_2)
+                (q_3) edge[bend left] node[below] {$0$} (q_2);
         \end{tikzpicture}
 
     \item The set of all strings, except the string $0000$.
@@ -145,7 +145,7 @@ Notice that a short regular expression does not automatically imply a DFA with f
                 (q_2) edge node {$1$} (q_5)
                 (q_3) edge node {$1$} (q_5)
                 (q_4) edge node {$0,1$} (q_5)
-                (q_5) edge[loop below] node {$0,1$} (q_5)
+                (q_5) edge[loop below] node {$0,1$} (q_5);
         \end{tikzpicture}
 \end{enumerate}
 
@@ -175,10 +175,45 @@ Tip: for readability, states in the DFA may be labeled according to the set of s
 
     \textbf{Solution}: DFA: \\
     % Answer Here
+    \begin{tikzpicture}[auto]
+        \node[state, initial] (q_0)
+        {$q_0$};
+        \node[state] (q_phi) [above right of=q_0]
+        {$q_\phi$};
+        \node[state] (q_01) [below right of=q_0]
+        {$q_{01}$};
+        \node[state, accepting] (q_02) [below right of=q_01]
+        {$q_{02}$};
+        \node[state, accepting] (q_012) [above right of=q_01]
+        {$q_{012}$};
+        \path[->]
+            (q_0) edge node {$a$} (q_phi)
+            (q_0) edge node {$b$} (q_01)
+            (q_0) edge[loop below] node {$c$} (q_0)
+            (q_01) edge node {$a$} (q_phi)
+            (q_01) edge[loop below] node {$b$} (q_01)
+            (q_01) edge node {$c$} (q_012)
+            (q_02) edge[loop right] node {$a$} (q_02)
+            (q_02) edge node {$b$} (q_01)
+            (q_02) edge[bend left=80] node {$c$} (q_0)
+            (q_012) edge node {$b$} (q_02)
+            (q_012) edge node {$b$} (q_01)
+            (q_012) edge[loop right] node {$c$} (q_012)
+            (q_phi) edge[loop above] node {$a,b,c$} (q_phi);
+    \end{tikzpicture}
 
     Correspondences (DFA to NFA):
     \begin{itemize}
         \item % Answer Here
+        $q_\phi \mapsto \phi$
+        \item
+        $q_0 \mapsto \{q_0\}$
+        \item
+        $q_{01} \mapsto \{q_0, q_1\}$
+        \item
+        $q_{02} \mapsto \{q_0, q_2\}$
+        \item
+        $q_{012} \mapsto \{q_0, q_1, q_2\}$
     \end{itemize}
 
     \item Original NFA: \\
@@ -197,10 +232,36 @@ Tip: for readability, states in the DFA may be labeled according to the set of s
 
     \textbf{Solution}: DFA: \\
     % Answer Here
+    \begin{tikzpicture}[auto]
+        \node[state, initial, accepting] (q_02)
+        {$q_{02}$};
+        \node[state, accepting] (q_012) [above right of=q_02]
+        {$q_{012}$};
+        \node[state, accepting] (q_2) [below right of=q_02]
+        {$q_2$};
+        \node[state] (q_phi) [right of=q_2]
+        {$q_\phi$};
+        \path[->]
+            (q_02) edge node {$a$} (q_2)
+            (q_02) edge node {$b$} (q_012)
+            (q_02) edge[loop below] node {$c$} (q_02)
+            (q_012) edge[loop above] node {$b, c$} (q_012)
+            (q_012) edge node {$a$} (q_2)
+            (q_2) edge node {$b, c$} (q_phi)
+            (q_2) edge[loop below] node {$a$} (q_2)
+            (q_phi) edge[loop below] node {$a, b, c$} (q_phi);
+    \end{tikzpicture}
 
     Correspondences (DFA to NFA):
     \begin{itemize}
         \item % Answer Here
+        $q_{\phi} \mapsto \phi$
+        \item
+        $q_2 \mapsto \{q_2\}$
+        \item
+        $q_{012} \mapsto \{q_0, q_1, q_2\}$
+        \item
+        $q_{02} \mapsto \{q_0, q_2\}$
     \end{itemize}
 
     \item Original NFA:\\
@@ -224,10 +285,67 @@ Tip: for readability, states in the DFA may be labeled according to the set of s
 
     \textbf{Solution}: DFA: \\
     % Answer Here
+    \begin{tikzpicture}[auto]
+        \node[state, initial] (q_02)
+        {$q_{02}$};
+        \node[state, accepting] (q_0123) [above right of=q_02]
+        {$q_{0123}$};
+        \node[state, accepting] (q_13) [below right of=q_02]
+        {$q_{13}$};
+        \node[state, accepting] (q_123) [right=6cm of q_0123]
+        {$q_{123}$};
+        \node[state] (q_12) [right=5cm of q_13]
+        {$q_{12}$};
+        \node[state] (q_2) [below right=2cm and 10cm of q_13]
+        {$q_2$};
+        \node[state, accepting] (q_23) [right of=q_123]
+        {$q_{23}$};
+        \node[state, accepting] (q_3) [right of=q_23]
+        {$q_3$};
+        \node[state] (q_phi) [right of=q_3]
+        {$q_\phi$};
+        \path[->]
+            (q_02) edge node {$a$} (q_0123)
+            (q_02) edge node {$b$} (q_123)
+            (q_02) edge node {$c$} (q_13)
+            (q_0123) edge[loop above] node {$a$} (q_0123)
+            (q_0123) edge node {$b,c$} (q_123)
+            (q_13) edge node {$a$} (q_2)
+            (q_13) edge node {$b$} (q_12)
+            (q_13) edge node {$c$} (q_23)
+            (q_12) edge node {$a,c$} (q_23)
+            (q_12) edge node {$b$} (q_123)
+            (q_2) edge node {$a,c$} (q_3)
+            (q_2) edge node {$b$} (q_23)
+            (q_123) edge[loop above] node {$b$} (q_123)
+            (q_123) edge node {$a,c$} (q_23)
+            (q_23) edge[loop above] node {$b$} (q_23)
+            (q_23) edge node {$a,c$} (q_3)
+            (q_3) edge[loop above] node {$c$} (q_3)
+            (q_3) edge node {$a,b$} (q_phi)
+            (q_phi) edge[loop below] node {$a, b, c$} (q_phi);
+    \end{tikzpicture}
 
     Correspondences (DFA to NFA):
     \begin{itemize}
         \item % Answer Here
+        $q_{\phi} \mapsto \phi$
+        \item
+        $q_2 \mapsto \{q_2\}$
+        \item
+        $q_3 \mapsto \{q_3\}$
+        \item
+        $q_{02} \mapsto \{q_0, q_2\}$
+        \item
+        $q_{12} \mapsto \{q_1, q_2\}$
+        \item
+        $q_{13} \mapsto \{q_1, q_3\}$
+        \item
+        $q_{23} \mapsto \{q_2, q_3\}$
+        \item
+        $q_{123} \mapsto \{q_1, q_2, q_3\}$
+        \item
+        $q_{0123} \mapsto \{q_0, q_1, q_2, q_3\}$
     \end{itemize}
 \end{enumerate}
 
