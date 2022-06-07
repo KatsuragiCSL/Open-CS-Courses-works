@@ -14,7 +14,7 @@
 #endif
 
 /*
- * This header file defines an interface to a generic chained hash table. 
+ * This header file defines an interface to a generic chained hash table.
  * It stores void * data and uses two functions, int (*) (void *)
  * and int (*) (void *, void *), to compute the hash and check
  * for equality.
@@ -28,6 +28,10 @@ struct HashBucket {
 typedef struct HashTable {
   // -- TODO --
   // HINT: Take a look at createHashTable.
+  int size;
+  unsigned int (*hashFunction)(void *);
+  int (*equalFunction)(void *, void *));
+  struct HashBucket **buckets;
 } HashTable;
 
 /*
@@ -50,7 +54,7 @@ extern void insertData(HashTable *table, void *key, void *data);
 
 /*
  * This returns the corresponding data for a given key.
- * It returns NULL if the key is not found. 
+ * It returns NULL if the key is not found.
  */
 extern void *findData(HashTable *table, void *key);
 
