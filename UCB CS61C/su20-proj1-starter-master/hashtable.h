@@ -30,7 +30,7 @@ typedef struct HashTable {
   // HINT: Take a look at createHashTable.
   int size;
   unsigned int (*hashFunction)(void *);
-  int (*equalFunction)(void *, void *));
+  int (*equalFunction)(void *, void *);
   struct HashBucket **buckets;
 } HashTable;
 
