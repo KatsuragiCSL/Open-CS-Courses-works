@@ -6,3 +6,4 @@
 - Lab 3 (Timing Tests and Randomized Comparison Tests)
 - Lab 6 (Persistence)
 - Lab 7 (BST Map)
+- Lab 8 (Hash Map)

@@ -9,7 +9,7 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [CS 61C: Great Ideas in Computer Architecture](https://inst.eecs.berkeley.edu/~cs61c/su20/)      | computer architeture | In progress     |
 | [6.S081: Operating System Engineering ](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | Not started     |
 | [CS 161: Computer Security](https://su20.cs161.org/)      | Security | Not started     |
-| [CS143: Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | Not started     |
+| [CS143: Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | In progress     |
 | [CS 144: Introduction to Computer Networking](https://cs144.github.io/)      | Networking, building TCP/IP from scratch, building your own protocols | Not started     |
 | [DS 100: Principles and Techniques of Data Science](https://ds100.org/fa21/)	| data science | Not started	|
 | [CS50’s Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai/2020/)      | AI | Not started     |

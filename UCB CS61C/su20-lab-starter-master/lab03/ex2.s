@@ -23,10 +23,10 @@ dest:
 main:
     addi t0, x0, 0
     addi s0, x0, 0
-    la s1, source
-    la s2, dest
-loop:
-    slli s3, t0, 2
+    la s1, source #pointer to source
+    la s2, dest #pointer to dest
+loop: #code for loop
+    slli s3, t0, 2 #t0 = k
     add t1, s1, s3
     lw t2, 0(t1)
     beq t2, x0, exit
@@ -41,7 +41,7 @@ loop:
     add t2, x0, a0
     add t3, s2, s3
     sw t2, 0(t3)
-    add s0, s0, t2
+    add s0, s0, t2 #s0 = sum
     addi t0, t0, 1
     jal x0, loop
 square:
