@@ -25,8 +25,9 @@ public class Main {
                 if (!Repository.initialized()) {
                     System.out.println("Not in an initialized Gitlet directory.");
                     break;
-                }
+                } else {
 
+                }
                 break;
             // TODO: FILL THE REST IN
             default:

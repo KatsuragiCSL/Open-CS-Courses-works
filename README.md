@@ -5,7 +5,7 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | Course      | Learning point | Status     |
 | :---        | :----          | :---       |
 | [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, implementing an interpreter of Scheme Language      | Done   |
-| [CS 61B Data Structures](https://sp21.datastructur.es/)      | Java, data structures | In progress     |
+| [CS 61B Data Structures](https://sp21.datastructur.es/), [sp18](https://sp18.datastructur.es/index.html)      | Java, data structures | In progress     |
 | [CS 61C: Great Ideas in Computer Architecture](https://inst.eecs.berkeley.edu/~cs61c/su20/)      | computer architeture | In progress     |
 | [6.S081: Operating System Engineering ](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | Not started     |
 | [CS 161: Computer Security](https://su20.cs161.org/)      | Security | Not started     |
