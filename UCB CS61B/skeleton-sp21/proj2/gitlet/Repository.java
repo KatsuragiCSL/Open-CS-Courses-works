@@ -2,6 +2,7 @@ package gitlet;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import static gitlet.Utils.*;
 
@@ -58,6 +59,23 @@ public class Repository {
             master.save();
 
         }
+    }
+
+    public static void add(String fileName) {
+        /*check if file exists */
+        File file;
+        if (Paths.get(fileName).isAbsolute()) {
+            file = new File(fileName);
+        } else {
+            file = Utils.join(Repository.CWD, fileName);
+        }
+
+        if (!file.exists()) {
+            System.out.println("File does not exist.");
+            System.exit(0);
+        }
+
+
     }
 
 }

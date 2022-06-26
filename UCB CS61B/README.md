@@ -10,7 +10,8 @@
 - Lab 6 (Persistence)
 - Lab 7 (BST Map)
 - Lab 8 (Hash Map, polymorphism)
-- Project 2 (half done)
+- Project 2 (implementing git. Handling large project)
 
 ### Selected Assignments - sp18
-- Project 0 ()
+- Lab 11 (Maze solver. BFS, DFS, A*)
+- HW 4 (Puzzle Solver, A*)

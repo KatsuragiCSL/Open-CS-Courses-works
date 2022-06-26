@@ -24,9 +24,10 @@ public class Main {
                 // TODO: handle the `add [filename]` command
                 if (!Repository.initialized()) {
                     System.out.println("Not in an initialized Gitlet directory.");
-                    break;
+                } else if (args.length != 2) {
+                    System.out.println("Incorrect operands.");
                 } else {
-
+                    Repository.add(args[1]);
                 }
                 break;
             // TODO: FILL THE REST IN
