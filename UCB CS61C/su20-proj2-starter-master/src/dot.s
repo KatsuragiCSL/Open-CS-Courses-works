@@ -25,7 +25,7 @@ dot:
     blt a3, t2, exit6
 
     mv t0, x0 #counter
-    mv s6, x0 #sum
+    mv t6, x0 #sum
     li t1, 4 #bytes
 
 loop_start:
@@ -42,7 +42,7 @@ loop_start:
     lw t2, 0(t2)
     lw t3, 0(t3)
     mul t4, t3, t2
-    add s6, s6, t4
+    add t6, t6, t4
     #loop back
     addi t0, t0, 1
     j loop_start
@@ -53,7 +53,7 @@ loop_end:
 
     # Epilogue
 
-    mv a0, s6
+    mv a0, t6
     ret
 
 exit5:

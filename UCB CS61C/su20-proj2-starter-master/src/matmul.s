@@ -41,7 +41,7 @@ matmul:
 
 
 outer_loop_start: #loop through rows of m0
-    beq t0, a2, outer_loop_end
+    beq t0, a1, outer_loop_end
 
 
 
@@ -89,6 +89,7 @@ inner_loop_start: #loop through columns of m1
     lw a4, 8(sp)
     lw t0, 4(sp)
     lw t1, 0(sp)
+    addi sp, sp, 32
 
 
     # set (t0, t1) of d = a0
