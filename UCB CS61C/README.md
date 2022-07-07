@@ -6,3 +6,4 @@
 - Proj 1 (hash table)
 - Lab 3 (writing RISC V assembly)
 - Proj 2 (neural network in RISC V)
+- lab 4 (RISC V assembly debugging)
