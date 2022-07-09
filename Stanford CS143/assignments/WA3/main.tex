@@ -108,8 +108,13 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
     \end{center}
 
     \textbf{Solution}:
-    % target = 
-    $$S\to 1T\ |\ TS$$
+    % let X = balanced 0&1s ends with 1, Y = balanced 0&1s starts with 1
+    % target = X<[1]+>Y or <[0]+>XY or XY<[0]+> or <[0]+>XY<[0]+>
+    $$S\to XAY\ |\ BXY\ |\ XYB\ |\ BXYB$$
+    $$A\to 1\ |\ 1A$$
+    $$B\to 0\ |\ 0B$$
+    $$X\to \epsilon\ |\ 0X1$$
+    $$Y\to \epsilon\ |\ 1Y0$$
   \end{enumerate}
 
   \newpage
@@ -125,6 +130,83 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
   If not, explain why that is the case.
 
   \textbf{Solution}:
+  % intuition: similar to classic "if-then-else ambiguity", think about "if x then if x then x else x". This works when parsing the "if x then x else x" (latter part) to M in one parse tree, but doesn't work when one tries to parse the "if x then x" in the middle as the first step. Cuz one has to parse the rest as M -> if x then (if x then x) else E, but (if x then x) cannot be parsed as M as in the production rule, hence it fails.
+  % improve our first guess: how about changing the middle part (if x then x) to "if x then x else x" ? Then the "else x" at the end can't contribute to ambiguity. Making a second guess: "if x then x else if x then x", the "else x" should be fine this time. Whole sentence = "if x then if x then x else if x then x else x"
+  \\
+  It is ambiguous. Example: "if x then if x then x else if x then x else x"
+  \begin{center}
+  \begin{tikzpicture}
+  \node {$E$}
+    child {node {if}}
+    child {node {$x$}}
+    child {node {then}}
+    child {node {$E$}
+        child {node {$M$}
+            child {node {if}}
+            child {node {$x$}}
+            child {node {then}}
+            child {node {$M$}
+                child {node {$x$}}
+            }
+            child {node {else}}
+            child {node {$E$}
+                child {node {$M$}
+                    child {node {if}}
+                    child {node {$x$}}
+                    child {node {then}}
+                    child {node {$M$}
+                        child {node {$x$}}
+                    }
+                    child {node {else}}
+                    child {node {$E$}
+                        child {node {$M$}
+                            child {node {$x$}}
+                        }
+                    }
+                }
+            }
+        }
+    };
+  \end{tikzpicture}
+  \end{center}
+  
+  \vspace{1cm}
+  
+  \begin{center}
+  \begin{tikzpicture}
+  \node {$E$}
+    child {node {$M$} [sibling distance = 3cm]
+        child {node {if}}
+        child {node {$x$}}
+        child {node {then}}
+        child {node {$M$} [sibling distance = 1.5cm]
+            child {node {if}}
+            child {node {$x$}}
+            child {node {then}}
+            child {node {$M$}
+                child {node {$x$}}
+            }
+            child {node {else}}
+            child {node {$E$} [sibling distance = 1cm]
+                child {node {if}}
+                child {node {$x$}}
+                child {node {then}}
+                child {node {$E$}
+                    child {node {$M$}
+                        child {node {$x$}}
+                    }
+                }
+            }
+        }
+        child {node {else}}
+        child {node {$E$} 
+            child {node {$M$}
+                child {node {$x$}}
+            }
+        }
+    };
+  \end{tikzpicture}
+  \end{center}
 
   \newpage
 
@@ -140,6 +222,10 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
     \end{equation*}
 
     \textbf{Solution}:
+    $$S\to [T]S'\ |\ TbS'$$
+    $$S'\to (T)S'\ |\ aS'\ |\ \epsilon$$
+    $$T\to dT'$$
+    $$T'\to (S)T'\ |\ cT'\ |\ \epsilon$$
     
   \item Left factor the following grammar:
     \begin{equation*}
@@ -151,6 +237,12 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
     \end{equation*}
     
     \textbf{Solution}:
+    $$S\to (TS'$$
+    $$S'\to +T)\ |\ )$$
+    $$T\to U*T'\ |\ [U]$$
+    $$T'\to T\ |\ ?$$
+    $$U\to UU'\ |\ \epsilon$$
+    $$U'\to 0\ |\ 1$$
   \end{enumerate}
 
   \newpage
