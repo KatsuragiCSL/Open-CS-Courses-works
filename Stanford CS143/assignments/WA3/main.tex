@@ -339,10 +339,33 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
   \item Construct the first state of the LR(0) machine, compute the FOLLOW sets of A and B, and point out the conflicts that prevent the grammar from being SLR(1).
 
     \textbf{Solution}:
+    \\
+    First state:\\
+    \begin{equation*}
+    \begin{split}
+      S' &\to .S \\
+      S &\to .Aa \\
+      S &\to .Bb \\
+      A &\to .Ac \\
+      A &\to .\epsilon\\
+      B &\to .Bc \\
+      B &\to .\epsilon \\
+    \end{split}
+  \end{equation*}
+  \\
+  FOLLOW(A) = $\{a, c\}$\\
+  FOLLOW(B) = $\{b, c\}$\\
+  \\
+  The rules $A \to .\epsilon$ and $B \to .\epsilon$ are conflicting, hence the grammar is not SLR(1).
 
   \item Show modifications to production 4 ($A \to Ac$) and production 6 ($B \to Bc$) to make the grammar SLR(1) while having the same language as the original grammar $G$. Explain the intuition behind this result.
 
-    \textbf{Solution}:
+    \textbf{Solution}:\\
+    Intuition: by removing $c$ from FOLLOW(A) and FOLLOW(B), the follow sets are disjoint and hence the reduce-reduce conflict is removed.
+    \\
+    Modifications:\\
+    $$A\to cA$$
+    $$B\to cB$$
   \end{enumerate} 
 
 \end{enumerate}
