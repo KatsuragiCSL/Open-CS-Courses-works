@@ -262,18 +262,18 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
     
     \textbf{Solution}:
     \begin{itemize}
-    \item $S: $
-    \item $T: $
-    \item $U: $
+    \item $S: \{a, b, \#, ?\}$
+    \item $T: \{a, b, \epsilon\}$
+    \item $U: \{a, b\}$
     \end{itemize}
     
   \item Construct the FOLLOW sets for each of the nonterminals.
 
     \textbf{Solution}:
     \begin{itemize}
-    \item $S: $
-    \item $T: $
-    \item $U: $
+    \item $S: \{c, d, ?, \$\}$
+    \item $T: \{c, d, ?, \$\}$
+    \item $U: \{a, b, c, d, ?, \$\}$
     \end{itemize}
 
   \item Construct the LL(1) parsing table for the grammar.
@@ -283,11 +283,11 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
       \begin{tabular}{c|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}|C{3em}}
         Nonterminal & $a$ & $b$ & $c$ & $d$ & $\#$ & $?$ & $\$$ \\
         \hline
-        $S$ & & & & & & & \\
+        $S$ & $T?$ & $T?$ & & & $\#UT$ & $T?$ & \\
         \hline
-        $T$ & & & & & & & \\
+        $T$ & $aS$ & $bUc$ & $\epsilon$ & $\epsilon$ & & $\epsilon$ & $\epsilon$ \\
         \hline
-        $U$ & & & & & & & \\
+        $U$ & $aSc$ & $bTd$ &  & & & & \\
       \end{tabular}
     \end{center}
     
@@ -298,20 +298,20 @@ If you need to draw parse trees in \LaTeX{}, you may use the {\tt forest} packag
       \begin{tabular}{R{10em}|R{10em}|L{10em}}
         Stack & Input & Action \\
         \hline
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
-        & & \\
+        $S\$$ & $\#a?ca?\$$ & output $S\to \#UT$ \\
+        $\#UT\$$ & $\#a?ca?\$$ & match $\#$ \\
+        $UT\$$ & $a?ca?\$$ & output $U\to aSc$ \\
+        $aScT\$$ & $a?ca?\$$ & match $a$ \\
+        $ScT\$$ & $?ca?\$$ & output $S\to T?$ \\
+        $T?cT\$$ & $?ca?\$$ & output $T\to \epsilon$ \\
+        $?cT\$$ & $?ca?\$$ & match $?$ \\
+        $cT\$$ & $ca?\$$ & match $c$ \\
+        $T\$$ & $a?\$$ & output $T\to aS$ \\
+        $aS\$$ & $a?\$$ & match $a$ \\
+        $S\$$ & $?\$$ & output $S\to T?$ \\
+        $T?\$$ & $?\$$ & output $T\to \epsilon$ \\
+        $?\$$ & $?\$$ & match $?$ \\
+        $\$$ & $\$$ & accept \\
         & & \\
         & & \\
         & & \\
