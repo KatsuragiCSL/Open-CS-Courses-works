@@ -7,6 +7,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Graph for storing all of the intersection (vertex) and road (edge) information.
@@ -20,6 +23,47 @@ import java.util.ArrayList;
 public class GraphDB {
     /** Your instance variables for storing the graph. You should consider
      * creating helper classes, e.g. Node, Edge, etc. */
+    public static class Node {
+        public final Long id;
+        public final double lon;
+        public final double lat;
+        public String name = null;
+
+        public Node(Long id, double lon, double lat) {
+            this.id = id;
+            this.lon = lon;
+            this.lat = lat;
+        }
+    }
+
+    public static class Edge {
+        /* edge from u to v */
+        private Long u;
+        private Long v;
+        private double weight;
+        private String name;
+
+        public Edge(Long u, Long v, double weight, String name) {
+            this.u = u;
+            this.v = v;
+            this.weight = weight;
+            this.name = name;
+        }
+
+        public double getWeight() {
+            return this.weight;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+    }
+
+    public Map<Long, Node> nodes = new HashMap<>();
+    private Map<Long, ArrayList<Long>> adjNodes = new HashMap<>();
+    private Map<Long, ArrayList<Edge>> adjEdges = new HashMap<>();
+    private Map<String, ArrayList<Long>> names = new HashMap<>();
+
 
     /**
      * Example constructor shows how to create and start an XML parser.
@@ -58,6 +102,14 @@ public class GraphDB {
      */
     private void clean() {
         // TODO: Your code here.
+        Iterator<Map.Entry<Long, ArrayList<Long>>> itr = adjNodes.entrySet().iterator();
+        while (itr.hasNext()) {
+            Map.Entry<Long, ArrayList<Long>> entry = itr.next();
+            if (entry.getValue().isEmpty()) {
+                nodes.remove(entry.getKey());
+                itr.remove();
+            }
+        }
     }
 
     /**
@@ -66,7 +118,7 @@ public class GraphDB {
      */
     Iterable<Long> vertices() {
         //YOUR CODE HERE, this currently returns only an empty list.
-        return new ArrayList<Long>();
+        return nodes.keySet();
     }
 
     /**
@@ -75,7 +127,8 @@ public class GraphDB {
      * @return An iterable of the ids of the neighbors of v.
      */
     Iterable<Long> adjacent(long v) {
-        return null;
+        validateVertex(nodes.get(v));
+        return adjNodes.get(v);
     }
 
     /**
@@ -136,7 +189,17 @@ public class GraphDB {
      * @return The id of the node in the graph closest to the target.
      */
     long closest(double lon, double lat) {
-        return 0;
+        double dis = Double.MAX_VALUE;
+        Long ret = 0l;
+        for (Long id : vertices()) {
+            double tmp = distance(lon(id), lat(id), lon, lat);
+            if (tmp < dis) {
+                dis = tmp;
+                ret = id;
+            }
+        }
+
+        return ret;
     }
 
     /**
@@ -145,7 +208,8 @@ public class GraphDB {
      * @return The longitude of the vertex.
      */
     double lon(long v) {
-        return 0;
+        validateVertex(nodes.get(v));
+        return nodes.get(v).lon;
     }
 
     /**
@@ -154,6 +218,58 @@ public class GraphDB {
      * @return The latitude of the vertex.
      */
     double lat(long v) {
-        return 0;
+        validateVertex(nodes.get(v));
+        return nodes.get(v).lat;
+    }
+
+    /**
+     * check if v is a vertex in the graph
+     * @param v id of the node
+     */
+    void validateVertex(Node v) {
+        if (!nodes.containsKey(v.id)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * add a node to the graph
+     * GraphBuildingHandler needs to call this method
+     * @param id id of the node
+     * @param lon lon of the node
+     * @param lat lat of the node
+     */
+    void addNode(Long id, double lon, double lat) {
+        Node node = new Node(id, lon, lat);
+        nodes.put(id, node);
+        adjNodes.put(id, new ArrayList<>());
+        adjEdges.put(id, new ArrayList<>());
+    }
+
+    /**
+     * add an edge to the graph
+     * @param u start vertex
+     * @param v end vertex
+     * @param wayName name of the way
+     */
+    void addEdge(Long u, Long v, String wayName) {
+        validateVertex(nodes.get(u));
+        validateVertex(nodes.get(v));
+        adjNodes.get(u).add(v);
+        adjNodes.get(v).add(u);
+        Edge tmp = new Edge(u, v, distance(u, v), wayName);
+        adjEdges.get(u).add(tmp);
+        adjEdges.get(v).add(tmp);
+    }
+
+    /**
+     * add a way. GraphBuildingHandler needs to call this method
+     * @param ways
+     * @param wayName
+     */
+    void addWay(ArrayList<Long> ways, String wayName) {
+        for (int i = 1; i < ways.size(); i++) {
+            addEdge(ways.get(i - 1), ways.get(i), wayName);
+        }
     }
 }

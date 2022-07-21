@@ -1,5 +1,4 @@
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,6 +11,35 @@ import java.util.regex.Pattern;
  * down to the priority you use to order your vertices.
  */
 public class Router {
+    private static class SearchNode implements Comparable<SearchNode>{
+        public GraphDB.Node node;
+        public SearchNode parent;
+        public double gn;
+        public double hn;
+
+        public SearchNode(GraphDB.Node node, SearchNode parent, GraphDB.Node target) {
+            this.node = node;
+            this.parent = parent;
+            this.gn = parent == null ? 0 : parent.gn + GraphDB.distance(parent.node.lon, parent.node.lat, node.lon, node.lat);
+            this.hn = GraphDB.distance(node.lon, node.lat, target.lon, target.lat);
+        }
+        @Override
+        public int compareTo(SearchNode x) {
+            // have to return int for compareTo
+            if (this.fn() > x.fn()) {
+                return 1;
+            } else if (this.fn() < x.fn()) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
+
+        double fn() {
+            return this.gn + this.hn;
+        }
+    }
+
     /**
      * Return a List of longs representing the shortest path from the node
      * closest to a start location and the node closest to the destination
@@ -25,7 +53,37 @@ public class Router {
      */
     public static List<Long> shortestPath(GraphDB g, double stlon, double stlat,
                                           double destlon, double destlat) {
-        return null; // FIXME
+        GraphDB.Node start = g.nodes.get(g.closest(stlon, stlat));
+        GraphDB.Node dest = g.nodes.get(g.closest(destlon, destlat));
+        // track visited nodes
+        Map<Long, Boolean> marked = new HashMap<>();
+        PriorityQueue<SearchNode> pq = new PriorityQueue<>();
+        // start
+        SearchNode center = new SearchNode(start, null, dest);
+        pq.offer(center);
+
+        while (!pq.isEmpty() && g.distance(pq.peek().node.id, dest.id) != 0) {
+            center = pq.poll();
+            marked.put(center.node.id, true);
+            for (Long w : g.adjacent(center.node.id)) {
+                if (marked.containsKey(w)) {
+                    continue;
+                } else {
+                    pq.offer(new SearchNode(g.nodes.get(w), center, dest));
+                }
+            }
+        }
+
+        // construct the return
+        //SearchNode tmp = pq.peek();
+        ArrayList<Long> ret = new ArrayList<>();
+        ret.add(dest.id);
+        while (center != null) {
+            ret.add(center.node.id);
+            center = center.parent;
+        }
+        Collections.reverse(ret);
+        return ret;
     }
 
     /**
