@@ -17,4 +17,3 @@
 - HW 4 (Puzzle Solver, A*)
 - Lab 12 (Merge sort & quick sort implementation, TDD)
 - Project 3 (Maps route searcher, A*. Half done.)
-- HW 5 (Seam Carving)
