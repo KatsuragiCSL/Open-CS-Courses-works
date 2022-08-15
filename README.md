@@ -8,7 +8,6 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [CS 61B Data Structures](https://sp21.datastructur.es/), [sp18](https://sp18.datastructur.es/index.html)      | Java, data structures & algorithms | Done     |
 | [CS 61C: Great Ideas in Computer Architecture](https://inst.eecs.berkeley.edu/~cs61c/su20/)      | computer architeture, RISC-V | In progress     |
 | [6.S081: Operating System Engineering ](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | In progress     |
-| [CS 161: Computer Security](https://su20.cs161.org/)      | Security | In progress     |
 | [CS143: Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | In progress     |
 | [CS 144: Introduction to Computer Networking](https://cs144.github.io/)      | Networking, building TCP/IP from scratch, building your own protocols | Not started     |
 | [DS 100: Principles and Techniques of Data Science](https://ds100.org/fa21/)	| data science | Not started	|
@@ -17,7 +16,7 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [CS 110L: Safety in Systems Programming](https://reberhardt.com/cs110l/spring-2020/)        | Rust          | Not started       |
 | [CS3310 OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/cover.html)        | OCaml          | Not started       |
 | [CS170: Efficient Algorithms and Intractable Problems](https://cs170.org/)	| Advanced Algorithms and analysis	| Not started	|
-| [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Spring21/)        | numerical analysis          | Not started       |
+| [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Spring21/)        | numerical analysis          | In progress       |
 | [MIT6.050J: Information theory and Entropy](https://ocw.mit.edu/courses/6-050j-information-and-entropy-spring-2008/)        | information theory          | Not started       |
 | [EE120 Signals and Systems](https://inst.eecs.berkeley.edu/~ee120/fa19/)      | Learning point | Not started     |
 | [CMU 15-213: Introduction to Computer System](http://csapp.cs.cmu.edu/)      | computer architeture | Not started     |
