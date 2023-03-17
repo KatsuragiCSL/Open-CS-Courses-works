@@ -9,9 +9,11 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| Not started	|
 | [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
 | [CS364A Algorithmic Game Theory](https://timroughgarden.org/f13/f13.html)	| Game theory	| Not started	|
+| [CS 222 Rational Agency and Intelligent Interaction](https://web.stanford.edu/class/cs222/)	| Multi-agent systems	| Not started	|
+| [CMU 15-382 Collective Intelligence](https://web2.qatar.cmu.edu/~gdicaro/15382/#overview)	| Learning point	| Not started	|
+| [CS204 Computational Law](http://complaw.stanford.edu/public/index.php)	| Learning point	| Not started	|
 | [CMU 15-424 Logical Foundations of Cyber-Physical Systems](https://lfcps.org/course/lfcps.html)	| Cyber-physical systems	| Not started	|
 | [CMU 16-299 Introduction to Feedback Control Systems](http://www.cs.cmu.edu/~cga/controls-intro/)	| Cyber-physical systems	| Not started	|
-| [CMU 15-382 Collective Intelligence](https://web2.qatar.cmu.edu/~gdicaro/15382/#overview)	| Learning point	| Not started	|
 | | |
 | [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, methods of designing programs      | Done   |
 | | |
@@ -29,7 +31,8 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [CS143 Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | In progress     |
 | [CS 6120 Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2022sp/)	| Compilers	| Not started	|
 | [CSCD70 Compiler Optimization](https://web.archive.org/web/20210306175518/https://uoft-ecosystem.github.io/CSCD70/index.html), [Lectures](https://www.youtube.com/watch?v=S_OeRTePeXg&list=PL0qj8UdnOw30ZGMcM6DwvM1J2tttyy_D6)	| Compilers	| Not started	|
-
+| | |
+| [CS111 Operating Systems Principles]](https://web.stanford.edu/class/archive/cs/cs111/cs111.1234/)      | Operating System | In progress     |
 | [MIT 6.S081: Operating System Engineering](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | In progress     |
 | [CS 162 Operating Systems and System Programming](https://inst.eecs.berkeley.edu/~cs162/sp20/), [Lectures](https://www.youtube.com/@johnkubiatowicz3737/playlists)      | Operating System |Not started     |
 | [CS 6210 Advanced Operating Systems](https://www.udacity.com/course/advanced-operating-systems--ud189)      | Operating System | In progress     |
@@ -69,12 +72,17 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | | |
 | [DS 100: Principles and Techniques of Data Science](https://ds100.org/fa21/)	| data science | Not started	|
 | [CS7646 MACHINE LEARNING FOR TRADING COURSE](https://lucylabs.gatech.edu/ml4t/), [Lectures](https://www.udacity.com/course/machine-learning-for-trading--ud501) | Machine learning | Not started	|
+| [CS221 Artificial Intelligence: Principles and Techniques](https://stanford-cs221.github.io/autumn2021/), [Lectures](https://www.youtube.com/watch?v=ZiwogMtbjr4&list=PLoROMvodv4rOca_Ovz1DvdtWuz8BfSWL2)	| AI	| Not started	|
 | [CS5785 Applied Machine Learning](https://cornelltech.github.io/cs5785-fall-2019/index.html)	| Machine learning	| Not started	|
 | [CMU11-785 Introduction to Deep Learning](https://deeplearning.cs.cmu.edu/S23/index.html)	| Deep learning	| Not started	|
+| [Full Stack Deep Learning](https://fullstackdeeplearning.com/)	| Deep learning	| Not started	|
 | [CS224N Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)	| Deep learning	| Not started	|
 | [CSC2547 Introduction to Reinforcement Learning](https://amfarahmand.github.io/IntroRL/), [Lectures](https://www.youtube.com/playlist?list=PLCveiXxL2xNbiDq51a8iJwPRq2aO0ykrq)	| Deep learning	| Not started	|
 | [CS 5846 Decision Theory](https://www.cs.cornell.edu/courses/cs5846/2021sp/)	| Decision theory	| Not started	|
+| [AA228 Decision Making under Uncertainty](https://aa228.stanford.edu/)	| Decision theory	| Not started	|
 | [CS224S Spoken Language Processing](http://web.stanford.edu/class/cs224s/)	| Machine learning	| Not started	|
 | | |
-| [CMU 15-390: Entrepreneurship for Computer Science](https://web2.qatar.cmu.edu/~mhhammou/15390-s20/index.html)	| Learning point	| Not started	|
-| [CS 007 PERSONAL FINANCE FOR ENGINEERS](https://cs007.blog/)	| Learning point	| Not started	|
+| [Law for Computer Scientists](https://lawforcomputerscientists.pubpub.org/)	| Law	| Not started	|
+| [CMU 15-390: Entrepreneurship for Computer Science](https://web2.qatar.cmu.edu/~mhhammou/15390-s20/index.html)	| Entrepreneurship	| Not started	|
+| [CS 291-177 Decentralized Finance](https://rdi.berkeley.edu/berkeley-defi/f22)	| DeFi	| Not started	|
+| [CS 007 PERSONAL FINANCE FOR ENGINEERS](https://cs007.blog/)	| Finance	| Not started	|
