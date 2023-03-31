@@ -42,8 +42,6 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [CS 110L Safety in Systems Programming](https://reberhardt.com/cs110l/spring-2020/)        | Rust          | Not started       |
 | [CS3310 OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/cover.html)        | OCaml          | Not started       |
 | | |
-| [MIT6.441 Information theory](https://ocw.mit.edu/courses/6-441-information-theory-spring-2010/)        | information theory          | Not started       |
-| | |
 | [CMU 15-418 Parallel Computer Architecture and Programming](https://www.cs.cmu.edu/afs/cs/academic/class/15418-f18/www/index.html)      | Parallel Programming | Not started     |
 | [MIT 6.5840 Distributed Systems](https://pdos.csail.mit.edu/6.824/)      | Distributed Systems | Not started     |
 | | |
