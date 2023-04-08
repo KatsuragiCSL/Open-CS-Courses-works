@@ -51,6 +51,7 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | [MIT 6.858 Computer System Security](http://css.csail.mit.edu/6.858/2022/)      | Security | Not started     |
 | | |
 | [MIT 6.875 Graduate Cryptography](https://inst.eecs.berkeley.edu/~cs276/fa20/), [Lectures](https://www.youtube.com/watch?v=jDsfV2ohFPs&list=PL6ogFv-ieghe8MOIcpD6UDtdK-UMHG8oH)	| Cryptography	| Not started	|
+| [Cryptography Engineering](https://www.amazon.com/Cryptography-Engineering-Principles-Practical-Applications/dp/0470474246)	| Cryptography	| Not started	|
 | [COMS 6998-006: Foundations of Blockchains](https://timroughgarden.github.io/fob21/), [Lectures](https://www.youtube.com/watch?v=KNJGPI0fuFA&list=PLEGCF-WLh2RLOHv_xUGLqRts_9JxrckiA)	| Cryptography	| Not started	|
 | | |
 | [CMU 15-217: Logic and Mechanized Reasoning](http://www.cs.cmu.edu/~mheule/15217-f22/index.html)	| Symbolic logic	| Not started	|
