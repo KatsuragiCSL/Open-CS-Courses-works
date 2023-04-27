@@ -23,7 +23,6 @@ This is a place to share my works on open CS courses. This is aimed to record my
 | | |
 | [MIT 6.031 Software Construction](https://web.mit.edu/6.031/www/sp22/)      | Software Engineering | Not started     |
 | [CMU 17-241: Principles of Software Construction](https://www.cs.cmu.edu/~charlie/courses/17-214/2021-spring/index.html)	| Software engineering	| Not started	|
-| [Design Patterns Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)	| Software engineering	| Not started	|
 | [MIT 6.172 Performance Engineering Of Software Systems](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)      | Software ENgineering | Not started     |
 | | |
 | [CMU 15-213: Introduction to Computer System](http://csapp.cs.cmu.edu/)      | computer architeture | Not started     |
