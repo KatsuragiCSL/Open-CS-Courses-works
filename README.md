@@ -4,7 +4,7 @@ This is a place to share my works on open CS courses. This is aimed to record my
 **Course list**
 | Course      | Learning point | Status     |
 | :---        | :----          | :---       |
-| [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Spring21/)        | numerical analysis          | In progress       |
+| [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Fall22/)        | Numerical Analysis          | In progress       |
 | [CMU 15-251 Great Ideas in Theoretical Computer Science](https://www.cs251.com/index.html)	| General	| Not started	|
 | [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| Not started	|
 | [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
