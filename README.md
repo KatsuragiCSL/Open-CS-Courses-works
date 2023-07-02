@@ -26,6 +26,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [MIT 6.172 Performance Engineering Of Software Systems](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)      | Software ENgineering | Not started     |
 | | |
 | [CMU 15-213: Introduction to Computer System](http://csapp.cs.cmu.edu/)      | computer architeture | Not started     |
+| [Digital Design and Computer Architecture](https://www.amazon.com/Digital-Design-Computer-Architecture-Harris/dp/0123944244)	|	Digital logic, build a CPU with verilog	|	Not started	|
 | | |
 | [CS442 Principles of Programming Languages](https://student.cs.uwaterloo.ca/~cs442)      | Programming languages | Not started     |
 | [CS143 Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | In progress     |
@@ -54,6 +55,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [Cryptography Engineering](https://www.amazon.com/Cryptography-Engineering-Principles-Practical-Applications/dp/0470474246)	| Cryptography	| Not started	|
 | [COMS 6998-006: Foundations of Blockchains](https://timroughgarden.github.io/fob21/), [Lectures](https://www.youtube.com/watch?v=KNJGPI0fuFA&list=PLEGCF-WLh2RLOHv_xUGLqRts_9JxrckiA)	| Cryptography	| Not started	|
 | | |
+| [Logic for Computer Science: Foundations of Automatic Theorem Proving](https://www.cis.upenn.edu/~jean/gbooks/logic.html)	|	Computational logic	|	Not started	|
 | [CMU 15-217: Logic and Mechanized Reasoning](http://www.cs.cmu.edu/~mheule/15217-f22/index.html)	| Symbolic logic	| Not started	|
 | [CMU 15-317 Constructive Logic](http://www.cs.cmu.edu/~crary/317-f18/schedule.html)	| Symbolic logic	| Not started	|
 | [CMU 15-816: Advanced Topics in Logic: Automated Reasoning and Satisfiability](http://www.cs.cmu.edu/~mheule/15816-f22/schedule.html)	| Symbolic logic	| Not started	|
