@@ -85,6 +85,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CS 5846 Decision Theory](https://www.cs.cornell.edu/courses/cs5846/2021sp/)	| Decision theory	| Not started	|
 | [AA228 Decision Making under Uncertainty](https://aa228.stanford.edu/)	| Decision theory	| Not started	|
 | [CS224S Spoken Language Processing](http://web.stanford.edu/class/cs224s/)	| Machine learning	| Not started	|
+| [NLP Course | For You](https://lena-voita.github.io/nlp_course.html)	|	NLP course by Lena Voita	|	Not started	|
 | | |
 | [Law for Computer Scientists](https://lawforcomputerscientists.pubpub.org/)	| Law	| Not started	|
 | [CMU 15-390: Entrepreneurship for Computer Science](https://web2.qatar.cmu.edu/~mhhammou/15390-s20/index.html)	| Entrepreneurship	| Not started	|
