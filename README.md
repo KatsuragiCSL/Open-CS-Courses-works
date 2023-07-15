@@ -40,6 +40,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | | |
 | [CS 144 Introduction to Computer Networking](https://cs144.github.io/), [Lectures](https://www.youtube.com/watch?v=qAFI-2I7wPE&list=PLoCMsyE1cvdWKsLVyf6cPwCLDIZnOj0NS)      | Networking, building TCP/IP from scratch, building your own protocols | Not started     |
 | | |
+| [CS106L Winter 2020 Standard C++ Programming](https://web.stanford.edu/class/archive/cs/cs106l/cs106l.1204/index.html)	|	C++	|	Not started	|
 | [CS 110L Safety in Systems Programming](https://reberhardt.com/cs110l/spring-2020/)        | Rust          | Not started       |
 | [CS3310 OCaml Programming: Correct + Efficient + Beautiful](https://cs3110.github.io/textbook/cover.html)        | OCaml          | Not started       |
 | | |
