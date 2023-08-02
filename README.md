@@ -50,6 +50,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CMU 15-445: Introduction to Database System](https://15445.courses.cs.cmu.edu/fall2021/), [Lectures](https://www.youtube.com/playlist?list=PLSE8ODhjZXjZaHA6QcxDfJ0SIWBzQFKEG)      | Database | Not started     |
 | | |
 | [CS 6431 Security and Privacy Technologies](https://www.cs.utexas.edu/~shmat/courses/cs6431/)	| Learning point	| Not started	|
+| [CS 253 Web Security](https://web.stanford.edu/class/cs253/)	|	web security	|	Not started	|
 | [MIT 6.858 Computer System Security](http://css.csail.mit.edu/6.858/2022/)      | Security | Not started     |
 | | |
 | [MIT 6.875 Graduate Cryptography](https://inst.eecs.berkeley.edu/~cs276/fa20/), [Lectures](https://www.youtube.com/watch?v=jDsfV2ohFPs&list=PL6ogFv-ieghe8MOIcpD6UDtdK-UMHG8oH)	| Cryptography	| Not started	|
