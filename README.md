@@ -76,6 +76,8 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CMU 15-462 Computer Graphics](http://15462.courses.cs.cmu.edu/fall2021/)	| Computer Graphics | Not started	|
 | [CMU 15-463 Computational Photography](http://graphics.cs.cmu.edu/courses/15-463/)	| Computer Graphics | Not started	|
 | [CMU 16-385 Computer Vision](http://www.cs.cmu.edu/~16385/)	| Computer Graphics | Not started	|
+| [Computational Imaging](https://imagingtext.github.io/)	|	Computational imaging	|	Not started       |
+| [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/)	|	Computer Vision	|	Not started       |
 | | |
 | [DS 100: Principles and Techniques of Data Science](https://ds100.org/fa21/)	| data science | Not started	|
 | [CS7646 MACHINE LEARNING FOR TRADING COURSE](https://lucylabs.gatech.edu/ml4t/), [Lectures](https://www.udacity.com/course/machine-learning-for-trading--ud501) | Machine learning | Not started	|
@@ -87,6 +89,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CSC2547 Introduction to Reinforcement Learning](https://amfarahmand.github.io/IntroRL/), [Lectures](https://www.youtube.com/playlist?list=PLCveiXxL2xNbiDq51a8iJwPRq2aO0ykrq)	| Deep learning	| Not started	|
 | [CS 5846 Decision Theory](https://www.cs.cornell.edu/courses/cs5846/2021sp/)	| Decision theory	| Not started	|
 | [AA228 Decision Making under Uncertainty](https://aa228.stanford.edu/)	| Decision theory	| Not started	|
+| [ALGORITHMS FOR DECISION MAKING](https://algorithmsbook.com/#)	|	Desiaion theory	|	Not started   |
 | [CS224S Spoken Language Processing](http://web.stanford.edu/class/cs224s/)	| Machine learning	| Not started	|
 | [NLP Course \| For You](https://lena-voita.github.io/nlp_course.html)	|	NLP course by Lena Voita	|	Not started	|
 | | |
