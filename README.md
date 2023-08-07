@@ -5,7 +5,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | Course      | Learning point | Status     | Works	|
 | :---        | :----          | :---       | :---	|
 | [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Fall22/)        | Numerical Analysis          | In progress       |
-| [CMU 15-251 Great Ideas in Theoretical Computer Science](https://www.cs251.com/index.html)	| General	| Not started	|
+| [CMU 15-251 Great Ideas in Theoretical Computer Science](https://www.cs251.com/index.html), [Homeworks](http://www.cs.cmu.edu/~15251/schedule.html)	| General	| Not started	|
 | [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| Not started	|
 | [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
 | [CS364A Algorithmic Game Theory](https://timroughgarden.org/f13/f13.html)	| Game theory	| Not started	|
@@ -33,7 +33,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CS 6120 Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2022sp/)	| Compilers	| Not started	|
 | [CSCD70 Compiler Optimization](https://web.archive.org/web/20210306175518/https://uoft-ecosystem.github.io/CSCD70/index.html), [Lectures](https://www.youtube.com/watch?v=S_OeRTePeXg&list=PL0qj8UdnOw30ZGMcM6DwvM1J2tttyy_D6)	| Compilers	| Not started	|
 | | |
-| [CS111 Operating Systems Principles]](https://web.stanford.edu/class/archive/cs/cs111/cs111.1234/)      | Operating System | In progress     |
+| [CS111 Operating Systems Principles](https://web.stanford.edu/class/archive/cs/cs111/cs111.1234/)      | Operating System | In progress     |
 | [MIT 6.S081: Operating System Engineering](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | In progress     |
 | [CS 162 Operating Systems and System Programming](https://inst.eecs.berkeley.edu/~cs162/sp20/), [Lectures](https://www.youtube.com/@johnkubiatowicz3737/playlists)      | Operating System |Not started     |
 | [CS 6210 Advanced Operating Systems](https://www.udacity.com/course/advanced-operating-systems--ud189)      | Operating System | In progress     |
