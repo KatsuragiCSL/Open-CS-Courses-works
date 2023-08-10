@@ -57,7 +57,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [Cryptography Engineering](https://www.amazon.com/Cryptography-Engineering-Principles-Practical-Applications/dp/0470474246)	| Cryptography	| Not started	|
 | [Modern Cryptanalysis: Techniques for Advanced Code Breaking](https://www.amazon.com/Modern-Cryptanalysis-Techniques-Advanced-Breaking/dp/047013593X)	|	cryptanalysis	|	Not started	|
 | [COMS 6998-006: Foundations of Blockchains](https://timroughgarden.github.io/fob21/), [Lectures](https://www.youtube.com/watch?v=KNJGPI0fuFA&list=PLEGCF-WLh2RLOHv_xUGLqRts_9JxrckiA)	| Cryptography	| Not started	|
-| [Cryptopals challenges](https://cryptopals.com/)	|	Learning crypto programming and hack by challs	|	Not started	|
+| [Cryptopals challenges](https://cryptopals.com/)	|	Learning crypto programming and hack by challs	|	In progress	|
 | [CryptoHacks](https://cryptohack.org/)	|	Learning crypto programming and hack by challs	|	Not started	|
 | | |
 | [Logic for Computer Science: Foundations of Automatic Theorem Proving](https://www.cis.upenn.edu/~jean/gbooks/logic.html)	|	Computational logic	|	Not started	|
