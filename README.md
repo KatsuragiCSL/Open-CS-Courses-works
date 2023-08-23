@@ -8,12 +8,14 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CMU 15-251 Great Ideas in Theoretical Computer Science](https://www.cs251.com/index.html), [Homeworks](http://www.cs.cmu.edu/~15251/schedule.html)	| General	| Not started	|
 | [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| Not started	|
 | [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
+| | |
 | [CS364A Algorithmic Game Theory](https://timroughgarden.org/f13/f13.html)	| Game theory	| Not started	|
 | [CS 222 Rational Agency and Intelligent Interaction](https://web.stanford.edu/class/cs222/)	| Multi-agent systems	| Not started	|
 | [CMU 15-382 Collective Intelligence](https://web2.qatar.cmu.edu/~gdicaro/15382/#overview)	| Learning point	| Not started	|
 | [CS204 Computational Law](http://complaw.stanford.edu/public/index.php)	| Learning point	| Not started	|
 | [CMU 15-424 Logical Foundations of Cyber-Physical Systems](https://lfcps.org/course/lfcps.html)	| Cyber-physical systems	| Not started	|
 | [CMU 16-299 Introduction to Feedback Control Systems](http://www.cs.cmu.edu/~cga/controls-intro/)	| Cyber-physical systems	| Not started	|
+| [CPEN 432 - Real-Time System Design](https://cpen432.github.io/)	|	embedded systems	|	Not started	|
 | | |
 | [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, methods of designing programs      | Done   |
 | | |
