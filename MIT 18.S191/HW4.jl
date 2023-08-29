@@ -493,8 +493,7 @@ This will give you the method used in the lecture to perform [exhaustive search 
 function recursive_seam(energies, starting_pixel)
 	m, n = size(energies)
 	# Replace the following line with your code.
-	least = 
-	path = 
+	#skip
 end
 
 # ╔═╡ 1d55333c-f393-11ea-229a-5b1e9cabea6a
@@ -548,7 +547,30 @@ function memoized_least_energy(energies, i, j, memory)
 	m, n = size(energies)
 	
 	# Replace the following line with your code.
-	[starting_pixel for i=1:m]
+	if haskey(memory, (i, j))
+		memory
+	elseif i == m
+		memory[(i, j)] = energies[i, j]
+		memory
+	else
+		left = max(1, j - 1)
+		middle = j
+		right = min(j + 1, n)
+		choices = [left, middle, right]
+
+		minimum = memoized_least_energy(energies, i + 1, left, memory)[i+1, left]
+		pick = left
+		for choice in choices
+			choice_energy = memoized_least_energy(energies, i + 1, choice, memory)[i+1, choice]
+			if choice_energy < minimum
+				pick = choice
+				minimum = choice_energy
+			end
+		end
+		memory[(i, j)] = minimum + energies[i, j]
+		memory
+	end
+		
 end
 
 # ╔═╡ 3e8b0868-f3bd-11ea-0c15-011bbd6ac051
@@ -558,7 +580,33 @@ function recursive_memoized_seam(energies, starting_pixel)
 	m, n = size(energies)
 	
 	# Replace the following line with your code.
-	[rand(1:starting_pixel) for i=1:m]
+	seam = Array{Int64}(undef, m)
+	seam[1] = starting_pixel
+	cur_col = starting_pixel
+	for i in 2:(m)
+		left = max(1, cur_col - 1)
+		middle = cur_col
+		right = min(cur_col + 1, n)
+		choices = [left, middle, right]
+
+		if i == m
+			next_col = m
+		else
+			next_col = i+1
+		end
+		minimum = memoized_least_energy(energies, next_col, left, memory)[next_col, left]
+		pick = left
+		for choice in choices
+			choice_energy = memoized_least_energy(energies, next_col, choice, memory)[next_col, choice]
+			if choice_energy < minimum
+				pick = choice
+				minimum = choice_energy
+			end
+		end
+		seam[i] = pick
+		cur_col = pick
+	end
+	seam
 end
 
 # ╔═╡ 4e3bcf88-f3c5-11ea-3ada-2ff9213647b7
