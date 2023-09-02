@@ -98,4 +98,4 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [Law for Computer Scientists](https://lawforcomputerscientists.pubpub.org/)	| Law	| Not started	|
 | [CMU 15-390: Entrepreneurship for Computer Science](https://web2.qatar.cmu.edu/~mhhammou/15390-s20/index.html)	| Entrepreneurship	| Not started	|
 | [CS 291-177 Decentralized Finance](https://rdi.berkeley.edu/berkeley-defi/f22)	| DeFi	| Not started	|
-| [CS 007 PERSONAL FINANCE FOR ENGINEERS](https://cs007.blog/)	| Finance	| Not started	|
+| [CS 007 PERSONAL FINANCE FOR ENGINEERS](https://cs007.blog/)	| Finance	| In progress	|
