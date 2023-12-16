@@ -2,23 +2,27 @@ Example 1:
 ```
 fn main() {
     let mut s = String::from("hello");
+    s = String::from("goodbye");
     let ref1 = &s;
     let ref2 = &ref1;
     let ref3 = &ref2;
-    s = String::from("goodbye");
+    //s = String::from("goodbye");
     println!("{}", ref3.to_uppercase());
 }
 ```
+Example 1 is not compilable. s is being used after being borrowed.
 
 
 
 Example 2:
 ```
-fn drip_drop() -> &String {
+//fn drip_drop() -> &String {
+fn drip_drop() -> String {
     let s = String::from("hello world!");
-    return &s;
+    return s;
 }
 ```
+Example 2 is not compilable. s will be out of lifetime after this function return. The reference of s will be invalid.
 
 
 
@@ -28,7 +32,9 @@ fn main() {
     let s1 = String::from("hello");
     let mut v = Vec::new();
     v.push(s1);
-    let s2: String = v[0];
+    //let s2: String = v[0];
+    let s2: &String = &v[0];
     println!("{}", s2);
 }
 ```
+Example 3 is not compilable. s2 is moving the string out from v, which is not allowed.
