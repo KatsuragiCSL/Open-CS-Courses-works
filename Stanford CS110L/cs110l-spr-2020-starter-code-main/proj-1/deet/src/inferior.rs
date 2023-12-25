@@ -73,7 +73,15 @@ impl Inferior {
         })
     }
 	
-	pub fn cont(&self) -> Result<(), nix::Error> {
-		ptrace::cont(self.pid(), None)
+	pub fn cont(&self) -> Result<Status, nix::Error> {
+		ptrace::cont(self.pid(), None);
+		let status = self.wait(None).ok().unwrap();
+		Ok(status)
+	}
+
+	pub fn kill(&mut self) -> Result<(), nix::Error> {
+		self.child.kill().ok();
+		self.wait(None).ok();
+		Ok(())
 	}
 }

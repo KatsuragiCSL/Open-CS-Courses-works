@@ -33,6 +33,20 @@ impl Debugger {
         loop {
             match self.get_next_command() {
                 DebuggerCommand::Run(args) => {
+					// kill existing processes
+					if self.inferior.is_some() {
+						let mut inf = self.inferior.as_mut().unwrap();
+						let killed = inf.kill();
+						match (killed) {
+							Ok(_) => {
+								println!("Killed running inferior pid {}", inf.pid());
+								self.inferior = None;
+							},
+							Err(_) => {
+								println!("Error occured when killing inferior pid {}", inf.pid());
+							}
+						}
+					}
                     if let Some(inferior) = Inferior::new(&self.target, &args) {
                         // Create the inferior
                         self.inferior = Some(inferior);
@@ -40,12 +54,14 @@ impl Debugger {
                         // to the Inferior object
 						let inf = self.inferior.as_mut().unwrap();
 						// continue executing until stopped or terminated
-						inf.cont();
-						let status = inf.wait(None).ok().unwrap();
+						let status = inf.cont().ok().unwrap();
 						match (status) {
 							Status::Exited(exit_code) => {
 								println!("Child exited (status {})", exit_code);
 								return;
+							},
+							Status::Stopped(signal, rip) => {
+								println!("Child stopped (signal {})", signal);
 							},
 							_ => {
 								return;
@@ -54,8 +70,43 @@ impl Debugger {
                     } else {
                         println!("Error starting subprocess");
                     }
-                }
+                },
+				DebuggerCommand::Continue => {
+					if self.inferior.is_none() {
+						println!("Error: no running process.");
+					} else {
+						let inf = self.inferior.as_mut().unwrap();
+						let status = inf.cont().ok().unwrap();
+						match (status) {
+							Status::Exited(exit_code) => {
+								println!("Child exited (status {})", exit_code);
+								return;
+							},
+							Status::Stopped(signal, rip) => {
+								println!("Child stopped (signal {})", signal);
+							},
+							_ => {
+								return;
+							}
+						}
+					}
+					
+				},
                 DebuggerCommand::Quit => {
+					// kill existing processes
+					if self.inferior.is_some() {
+						let mut inf = self.inferior.as_mut().unwrap();
+						let killed = inf.kill();
+						match (killed) {
+							Ok(_) => {
+								println!("Killed running inferior pid {}", inf.pid());
+								self.inferior = None;
+							},
+							Err(_) => {
+								println!("Error occured when killing inferior pid {}", inf.pid());
+							}
+						}
+					}
                     return;
                 }
             }
