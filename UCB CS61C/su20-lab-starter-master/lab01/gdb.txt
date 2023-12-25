@@ -1,9 +1,0 @@
-1. set args [Arguments]
-2. b [memory addr]
-3. n 
-4. s
-5. c
-6. display [expr] 
-7. define hook-stop display [expr] end
-8. info locals
-9. quit
