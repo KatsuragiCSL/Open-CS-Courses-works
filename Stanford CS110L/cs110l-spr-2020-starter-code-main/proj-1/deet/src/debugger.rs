@@ -4,6 +4,7 @@ use crate::inferior::Inferior;
 use crate::inferior::Status;
 use rustyline::error::ReadlineError;
 use rustyline::Editor;
+use std::collections::HashMap;
 
 pub struct Debugger {
     target: String,
@@ -11,6 +12,7 @@ pub struct Debugger {
     readline: Editor<()>,
     inferior: Option<Inferior>,
 	debug_data: DwarfData,
+	breakpoints: HashMap<usize, u8>,
 }
 
 impl Debugger {
@@ -39,6 +41,7 @@ impl Debugger {
             readline,
             inferior: None,
 			debug_data: debug_data,
+			breakpoints: HashMap::new(),
         }
     }
 
@@ -60,7 +63,7 @@ impl Debugger {
 							}
 						}
 					}
-                    if let Some(inferior) = Inferior::new(&self.target, &args) {
+                    if let Some(inferior) = Inferior::new(&self.target, &args, &mut self.breakpoints) {
                         // Create the inferior
                         self.inferior = Some(inferior);
                         // You may use self.inferior.as_mut().unwrap() to get a mutable reference
@@ -93,6 +96,7 @@ impl Debugger {
                         println!("Error starting subprocess");
                     }
                 },
+
 				DebuggerCommand::Continue => {
 					if self.inferior.is_none() {
 						println!("Error: no running process.");
@@ -123,6 +127,7 @@ impl Debugger {
 					}
 					
 				},
+
 				DebuggerCommand::Backtrace => {
 					if self.inferior.is_none() {
 						println!("Error: no running process.");
@@ -130,7 +135,26 @@ impl Debugger {
 						let inf = self.inferior.as_mut().unwrap();
 						inf.print_backtrace(&self.debug_data);
 					}
-				}
+				},
+
+				DebuggerCommand::Breakpoint(location) => {
+					let breakpoint_addr;
+					if location.starts_with("*") {
+						if let Some(address) = Debugger::parse_address(&location[1..]) {
+                            breakpoint_addr = address;
+                        } else {
+                            println!("Invalid address");
+							continue;
+                        }
+					} else {
+						//TODO
+						breakpoint_addr = 0;
+					} 
+					
+					println!("Set breakpoint 0 at {:#x}", breakpoint_addr);
+					self.breakpoints.insert(breakpoint_addr, 0);
+				},
+
                 DebuggerCommand::Quit => {
 					// kill existing processes
 					if self.inferior.is_some() {
@@ -192,4 +216,13 @@ impl Debugger {
             }
         }
     }
+
+	fn parse_address(addr: &str) -> Option<usize> {
+    	let addr_without_0x = if addr.to_lowercase().starts_with("0x") {
+        	&addr[2..]
+    	} else {
+        	&addr
+    	};
+    	usize::from_str_radix(addr_without_0x, 16).ok()
+	}
 }

@@ -5,6 +5,8 @@ use nix::sys::wait::{waitpid, WaitPidFlag, WaitStatus};
 use nix::unistd::Pid;
 use std::process::{Command, Child};
 use std::os::unix::process::CommandExt;
+use std::mem::size_of;
+use std::collections::HashMap;
 
 pub enum Status {
     /// Indicates inferior stopped. Contains the signal that stopped the process, as well as the
@@ -35,22 +37,20 @@ pub struct Inferior {
 impl Inferior {
     /// Attempts to start a new inferior process. Returns Some(Inferior) if successful, or None if
     /// an error is encountered.
-    pub fn new(target: &str, args: &Vec<String>) -> Option<Inferior> {
+    pub fn new(target: &str, args: &Vec<String>, breakpoints: &mut HashMap<usize, u8>) -> Option<Inferior> {
 		let mut cmd = Command::new(target);
 		cmd.args(args);
 		unsafe {
 			cmd.pre_exec(child_traceme);
 		}
 		let child = cmd.spawn().ok()?;
-		let inf = Inferior {child: child};
-		let status = inf.wait(Some(WaitPidFlag::WSTOPPED)).ok()?;
-		match (status) {
-			Status::Stopped(_, _) => {
-			},
-			_ => {
-				println!("Children is not stopped.");
-				return None
-			}
+		let mut inf = Inferior {child: child};
+		let bps = breakpoints.clone();
+		for breakpoint in bps.keys() {
+			match inf.write_byte(*breakpoint, 0xcc) {
+                Ok(ori_instr) => {breakpoints.insert(*breakpoint, ori_instr);}
+                Err(_) => println!("Invalid breakpoint address {:#x}", breakpoint),
+            }
 		}
 		Some(inf)
     }
@@ -112,4 +112,23 @@ impl Inferior {
 		//println!("$rip: {:#x}", regs.rip);
 		Ok(())
 	}
+
+	fn align_addr_to_word(addr: usize) -> usize {
+    	addr & (-(size_of::<usize>() as isize) as usize)
+	}
+
+	fn write_byte(&mut self, addr: usize, val: u8) -> Result<u8, nix::Error> {
+        let aligned_addr = Inferior::align_addr_to_word(addr);
+        let byte_offset = addr - aligned_addr;
+        let word = ptrace::read(self.pid(), aligned_addr as ptrace::AddressType)? as u64;
+        let orig_byte = (word >> 8 * byte_offset) & 0xff;
+        let masked_word = word & !(0xff << 8 * byte_offset);
+        let updated_word = masked_word | ((val as u64) << 8 * byte_offset);
+        ptrace::write(
+            self.pid(),
+            aligned_addr as ptrace::AddressType,
+            updated_word as *mut std::ffi::c_void,
+        )?;
+        Ok(orig_byte as u8)
+    }
 }
