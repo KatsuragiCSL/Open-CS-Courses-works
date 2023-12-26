@@ -75,6 +75,15 @@ impl Debugger {
 							},
 							Status::Stopped(signal, rip) => {
 								println!("Child stopped (signal {})", signal);
+								// print stopped location in source.
+								let debug_data = &self.debug_data;
+								let line = debug_data.get_line_from_addr(rip as usize);
+								match line {
+									Some(_line) => {
+										println!("Stopped at {}:{}", _line.file, _line.number);
+									},
+									None => {}
+								}
 							},
 							_ => {
 								return;
@@ -97,6 +106,15 @@ impl Debugger {
 							},
 							Status::Stopped(signal, rip) => {
 								println!("Child stopped (signal {})", signal);
+								// print stopped location in source.
+								let debug_data = &self.debug_data;
+								let line = debug_data.get_line_from_addr(rip as usize);
+								match line {
+									Some(_line) => {
+										println!("Stopped at {}:{}", _line.file, _line.number);
+									},
+									None => {}
+								}
 							},
 							_ => {
 								return;
