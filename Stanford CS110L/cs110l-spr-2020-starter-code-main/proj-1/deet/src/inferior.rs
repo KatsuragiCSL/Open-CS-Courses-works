@@ -1,3 +1,4 @@
+use crate::dwarf_data::{DwarfData, Error as DwarfError};
 use nix::sys::ptrace;
 use nix::sys::signal;
 use nix::sys::wait::{waitpid, WaitPidFlag, WaitStatus};
@@ -82,6 +83,33 @@ impl Inferior {
 	pub fn kill(&mut self) -> Result<(), nix::Error> {
 		self.child.kill().ok();
 		self.wait(None).ok();
+		Ok(())
+	}
+	
+	pub fn print_backtrace(&self, dwarf_data: &DwarfData) -> Result<(), nix::Error> {
+		let regs = ptrace::getregs(self.pid())?;
+		let mut rip = regs.rip as usize;
+		let mut rbp = regs.rbp as usize;
+		loop {
+			let line = dwarf_data.get_line_from_addr(rip as usize);
+			let func = dwarf_data.get_function_from_addr(rip as usize);
+			match (&line, &func) {
+				(Some(_line), Some(_func)) => println!("{} ({}:{})", _func, _line.file, _line.number),
+				_ => println!("Unknown function or cannot get line number."),
+			}
+
+			match (&func) {
+				Some(_func) => {
+					if _func == "main" {
+						break;
+					}
+				},
+				None => {},
+			}
+			rip = ptrace::read(self.pid(), (rbp+8) as ptrace::AddressType)? as usize;
+			rbp = ptrace::read(self.pid(), rbp as ptrace::AddressType)? as usize;
+		}
+		//println!("$rip: {:#x}", regs.rip);
 		Ok(())
 	}
 }
