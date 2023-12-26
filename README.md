@@ -5,7 +5,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | Course      | Learning point | Status     | Works	|
 | :---        | :----          | :---       | :---	|
 | [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Fall22/)        | Numerical Analysis          | On Hold       |
-| [CMU 15-251 Great Ideas in Theoretical Computer Science](https://www.cs251.com/index.html), [Homeworks](http://www.cs.cmu.edu/~15251/schedule.html)	| General	| Not started	|
+| [CMU 15-251 Great Ideas in Theoretical Computer Science](http://www.cs.cmu.edu/~15251/schedule.html)	| General	| Not started	|
 | [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| Not started	|
 | [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
 | | |
@@ -27,7 +27,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CMU 17-241: Principles of Software Construction](https://www.cs.cmu.edu/~charlie/courses/17-214/2021-spring/index.html)	| Software engineering	| Not started	|
 | [MIT 6.172 Performance Engineering Of Software Systems](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)      | Software ENgineering | Not started     |
 | | |
-| [CMU 15-213: Introduction to Computer System](http://csapp.cs.cmu.edu/)      | computer architeture | Not started     |
+| [CMU 15-213: Introduction to Computer System](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/index.html)      | computer architeture | In progress     |
 | [Digital Design and Computer Architecture](https://www.amazon.com/Digital-Design-Computer-Architecture-Harris/dp/0123944244)	|	Digital logic, build a CPU with verilog	|	Not started	|
 | | |
 | [CS442 Principles of Programming Languages](https://student.cs.uwaterloo.ca/~cs442)      | Programming languages | Not started     |
