@@ -22,6 +22,105 @@ int is_transpose(int M, int N, int A[N][M], int B[M][N]);
 char transpose_submit_desc[] = "Transpose submission";
 void transpose_submit(int M, int N, int A[N][M], int B[M][N])
 {
+    if (M == 32 && N ==32) {
+        for (int i = 0; i < 32; i += 8) {
+            for (int j = 0; j < 32; j += 8) {
+                for (int ii = i; ii < i + 8; ii++) {
+                    int tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8;
+                    tmp1 = A[ii][j+0];
+                    tmp2 = A[ii][j+1];
+                    tmp3 = A[ii][j+2];
+                    tmp4 = A[ii][j+3];
+                    tmp5 = A[ii][j+4];
+                    tmp6 = A[ii][j+5];
+                    tmp7 = A[ii][j+6];
+                    tmp8 = A[ii][j+7];
+
+                    B[j+0][ii] = tmp1;
+                    B[j+1][ii] = tmp2;
+                    B[j+2][ii] = tmp3;
+                    B[j+3][ii] = tmp4;
+                    B[j+4][ii] = tmp5;
+                    B[j+5][ii] = tmp6;
+                    B[j+6][ii] = tmp7;
+                    B[j+7][ii] = tmp8;
+                }
+            }
+        }
+    } else if (M == 64 && N == 64) {
+        // main issue is the last 4 rows of B evicts the first 4 rows of B
+        // solution: transpose the 4x4 submatrices in the 8x8 submatrix, put the 4x4 submatrix A_{12} in B_{12} (instead of B_{21}) cuz B_{21} is already in cache when writing B_{11}.
+        // then move B_{12} to B_{21} (causing 4 cold misses) row by row and transfer A_{21} to B_{12} (another 4 cold misses)
+        // finally transfer A_{22}
+        int tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8;
+        for (int i = 0; i < 64; i += 8) {
+            for (int j = 0; j < 64; j += 8) {
+                for (int ii = i; ii < i + 4; ii++) {
+                    tmp1 = A[ii][j+0];
+                    tmp2 = A[ii][j+1];
+                    tmp3 = A[ii][j+2];
+                    tmp4 = A[ii][j+3];
+                    tmp5 = A[ii][j+4];
+                    tmp6 = A[ii][j+5];
+                    tmp7 = A[ii][j+6];
+                    tmp8 = A[ii][j+7];
+
+                    B[j+0][ii] = tmp1;
+                    B[j+1][ii] = tmp2;
+                    B[j+2][ii] = tmp3;
+                    B[j+3][ii] = tmp4;
+                    B[j+0][ii+4] = tmp5;
+                    B[j+1][ii+4] = tmp6;
+                    B[j+2][ii+4] = tmp7;
+                    B[j+3][ii+4] = tmp8;
+                }
+                for (int jj = j; jj < j + 4; jj++) {
+                    // A_{21} to B_{12}
+                    tmp1 = A[i+4][jj];
+                    tmp2 = A[i+5][jj];
+                    tmp3 = A[i+6][jj];
+                    tmp4 = A[i+7][jj];
+                    // B_{12} to B_{21}
+                    tmp5 = B[jj][i+4];
+                    tmp6 = B[jj][i+5];
+                    tmp7 = B[jj][i+6];
+                    tmp8 = B[jj][i+7];
+
+                    B[jj][i+4] = tmp1;
+                    B[jj][i+5] = tmp2;
+                    B[jj][i+6] = tmp3;
+                    B[jj][i+7] = tmp4;
+                    
+                    B[jj+4][i+0] = tmp5;
+                    B[jj+4][i+1] = tmp6;
+                    B[jj+4][i+2] = tmp7;
+                    B[jj+4][i+3] = tmp8;
+                }
+                for (int ii = i + 4; ii < i + 8; ii++) {
+                    tmp1 = A[ii][j+4];
+                    tmp2 = A[ii][j+5];
+                    tmp3 = A[ii][j+6];
+                    tmp4 = A[ii][j+7];
+
+                    B[j+4][ii] = tmp1;
+                    B[j+5][ii] = tmp2;
+                    B[j+6][ii] = tmp3;
+                    B[j+7][ii] = tmp4;
+                }
+            }
+        }
+    } else {
+        for (int i = 0; i < N; i += 16) {
+            for (int j = 0; j < M; j += 16) {
+                for (int ii = i; ii < N && ii < i + 16; ii++) {
+                    for (int jj = j; jj < M && jj < j + 16; jj++) {
+                        int tmp = A[ii][jj];
+                        B[jj][ii] = tmp;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* 
