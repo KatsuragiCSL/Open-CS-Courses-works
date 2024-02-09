@@ -5,8 +5,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | Course      | Learning point | Status     | Works	|
 | :---        | :----          | :---       | :---	|
 | [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Fall22/)        | Numerical Analysis          | On Hold       |
-| [CMU 15-251 Great Ideas in Theoretical Computer Science](http://www.cs.cmu.edu/~15251/schedule.html)	| General	| Not started	|
-| [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| Not started	|
+| [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| In progress	|
 | [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
 | | |
 | [CS364A Algorithmic Game Theory](https://timroughgarden.org/f13/f13.html)	| Game theory	| Not started	|
@@ -99,4 +98,4 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [Law for Computer Scientists](https://lawforcomputerscientists.pubpub.org/)	| Law	| Not started	|
 | [CMU 15-390: Entrepreneurship for Computer Science](https://web2.qatar.cmu.edu/~mhhammou/15390-s20/index.html)	| Entrepreneurship	| Not started	|
 | [CS 291-177 Decentralized Finance](https://rdi.berkeley.edu/berkeley-defi/f22)	| DeFi	| Not started	|
-| [CS 007 PERSONAL FINANCE FOR ENGINEERS](https://cs007.blog/)	| Finance	| In progress	|
+| [CS 007 PERSONAL FINANCE FOR ENGINEERS](https://cs007.blog/)	| Finance	| Done	|
