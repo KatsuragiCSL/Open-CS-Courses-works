@@ -19,7 +19,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CS 61A: Structure and Interpretation of Computer Programs](https://inst.eecs.berkeley.edu/~cs61a/su20/)      | Python, abstraction of programs, methods of designing programs      | Done   |
 | | |
 | [CS 61B Data Structures](https://sp21.datastructur.es/), [sp18](https://sp18.datastructur.es/index.html)      | Java, data structures & algorithms | Done     |
-| [MIT 6.006 Introduction to algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)      | Data structures & algorithms | Not started     |
+| [MIT 6.006 Introduction to algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)      | Data structures & algorithms | In progress     |
 | [AA222 Engineering Design Optimization](https://aa222.stanford.edu/)      | Optimization | Not started     |
 | | |
 | [MIT 6.031 Software Construction](https://web.mit.edu/6.031/www/sp22/)      | Software Engineering | Not started     |
