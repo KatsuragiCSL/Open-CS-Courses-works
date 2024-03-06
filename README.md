@@ -33,7 +33,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CS442 Principles of Programming Languages](https://student.cs.uwaterloo.ca/~cs442)      | Programming languages | Not started     |
 | [CS242 Programming Languages](https://stanford-cs242.github.io/f19/)	|	Programming languages | Not started     |
 | [CS143 Compilers](http://web.stanford.edu/class/cs143/), [Lectures](https://www.youtube.com/playlist?list=PLEAYkSg4uSQ3yc_zf_f1GOxl5CZo0LVBb)      | Compilers | In progress     |
-| [CS 6120 Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2022sp/)	| Compilers	| Not started	|
+| [CS 6120 Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/)	| Compilers	| Not started	|
 | [CSCD70 Compiler Optimization](https://web.archive.org/web/20210306175518/https://uoft-ecosystem.github.io/CSCD70/index.html), [Lectures](https://www.youtube.com/watch?v=S_OeRTePeXg&list=PL0qj8UdnOw30ZGMcM6DwvM1J2tttyy_D6)	| Compilers	| Not started	|
 | | |
 | [CS111 Operating Systems Principles](https://web.stanford.edu/class/archive/cs/cs111/cs111.1234/)      | Operating System | In progress     |
