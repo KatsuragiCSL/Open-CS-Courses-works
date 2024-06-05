@@ -27,7 +27,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [MIT 6.172 Performance Engineering Of Software Systems](https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/)      | Software ENgineering | Not started     |
 | | |
 | [CMU 15-213: Introduction to Computer System](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f15/www/index.html)      | computer architeture | Half done, changed to UCB 61C     |
-| [UCB 61C Great Ideas in Computer Architecture (Machine Structures)](https://inst.eecs.berkeley.edu/~cs61c/su20/)	|	computer architecture	| In progress	|
+| [UCB 61C Great Ideas in Computer Architecture (Machine Structures)](https://cs61c.org/sp24/)	|	computer architecture	| In progress	|
 | [Digital Design and Computer Architecture](https://www.amazon.com/Digital-Design-Computer-Architecture-Harris/dp/0123944244)	|	Digital logic, build a CPU with verilog	|	Not started	|
 | | |
 | [CS442 Principles of Programming Languages](https://student.cs.uwaterloo.ca/~cs442)      | Programming languages | Not started     |
