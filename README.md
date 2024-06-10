@@ -36,10 +36,10 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | [CS 6120 Advanced Compilers](https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/)	| Compilers	| Not started	|
 | [CSCD70 Compiler Optimization](https://web.archive.org/web/20210306175518/https://uoft-ecosystem.github.io/CSCD70/index.html), [Lectures](https://www.youtube.com/watch?v=S_OeRTePeXg&list=PL0qj8UdnOw30ZGMcM6DwvM1J2tttyy_D6)	| Compilers	| Not started	|
 | | |
-| [CS111 Operating Systems Principles](https://web.stanford.edu/class/archive/cs/cs111/cs111.1234/)      | Operating System | In progress     |
-| [MIT 6.S081: Operating System Engineering](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | In progress     |
+| [CS111 Operating Systems Principles](https://web.stanford.edu/class/archive/cs/cs111/cs111.1234/)      | Operating System | Not started     |
+| [MIT 6.S081: Operating System Engineering](https://pdos.csail.mit.edu/6.828/2021/schedule.html)      | Operating System | Not started     |
 | [CS 162 Operating Systems and System Programming](https://inst.eecs.berkeley.edu/~cs162/sp20/), [Lectures](https://www.youtube.com/@johnkubiatowicz3737/playlists)      | Operating System |Not started     |
-| [CS 6210 Advanced Operating Systems](https://www.udacity.com/course/advanced-operating-systems--ud189)      | Operating System | In progress     |
+| [CS 6210 Advanced Operating Systems](https://www.udacity.com/course/advanced-operating-systems--ud189)      | Operating System | Not started     |
 | | |
 | [CS 144 Introduction to Computer Networking](https://cs144.github.io/), [Lectures](https://www.youtube.com/watch?v=qAFI-2I7wPE&list=PLoCMsyE1cvdWKsLVyf6cPwCLDIZnOj0NS)      | Networking, building TCP/IP from scratch, building your own protocols | Not started     |
 | | |
