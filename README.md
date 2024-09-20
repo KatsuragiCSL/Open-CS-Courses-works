@@ -6,7 +6,7 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | :---        | :----          | :---       | :---	|
 | [MIT 18.S191/6.S083/22.S092 Introduction to Computational Thinking](https://computationalthinking.mit.edu/Fall22/)        | Numerical Analysis          | On Hold       |
 | [CMU 15-751 A Theorist's Toolkit](https://www.cs.cmu.edu/~15751/), [Lectures](https://www.youtube.com/playlist?list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX)	| General	| In progress	|
-| [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	| Not started	|
+| [CS197 Computer Science Research](https://web.stanford.edu/class/cs197/)	| General	|	In progress	|
 | | |
 | [CS364A Algorithmic Game Theory](https://timroughgarden.org/f13/f13.html)	| Game theory	| Not started	|
 | [CS 222 Rational Agency and Intelligent Interaction](https://web.stanford.edu/class/cs222/)	| Multi-agent systems	| Not started	|
@@ -52,7 +52,6 @@ This is a place to share my works on open CS courses, books and exercises. This 
 | | |
 | [CMU 15-445: Introduction to Database System](https://15445.courses.cs.cmu.edu/fall2021/), [Lectures](https://www.youtube.com/playlist?list=PLSE8ODhjZXjZaHA6QcxDfJ0SIWBzQFKEG)      | Database | Not started     |
 | | |
-| [CS 6431 Security and Privacy Technologies](https://www.cs.utexas.edu/~shmat/courses/cs6431/)	| Learning point	| Not started	|
 | [CS 253 Web Security](https://web.stanford.edu/class/cs253/)	|	web security	|	Not started	|
 | [MIT 6.858 Computer System Security](http://css.csail.mit.edu/6.858/2022/)      | Security | Not started     |
 | | |
